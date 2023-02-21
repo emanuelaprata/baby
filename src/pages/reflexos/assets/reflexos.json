@@ -1,0 +1,50 @@
+[
+    {
+        "name": "MORO",
+        "image": "https://soumamae.com.br/wp-content/uploads/2017/03/bebe-com-os-bracos-erguidos.jpg",
+        "descrição": "Estica as pernas, braços e dedos, se curva e joga a cabeça para trás",
+        "estimulo": "O bebê sente que vai ser derrubado ou ouve um estampido"
+    },
+
+    {
+        "name": "PREENSÃO",
+        "image": "https://images.pexels.com/photos/15466023/pexels-photo-15466023.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "descrição": "Fecha o punho com força. Pode ser erguido se ambos os punhos segurarem algo",
+        "estimulo": "Acariciar a palma da mão do bebê."
+    },
+
+    {
+        "name": "TÔNICO ASSIMÉTRICO DO PESCOÇO",
+        "image": "https://img.freepik.com/fotos-gratis/retrato-de-bebe-adoravel_23-2148341986.jpg?w=740&t=st=1676642898~exp=1676643498~hmac=2c5e035909d13ef4050181e28d679a444ab849f6471f3e5772ac8a8e934296bf",
+        "descrição": "Vira a cabeça para o lado, toma a posição de esgrimista, estende braços e pernas para o lado preferido e flexiona os membros opostos.",
+        "estimulo": "Deitar o bebê de costas."
+    },
+
+    {
+        "name": "Babinski",
+        "image": "https://img.freepik.com/fotos-gratis/mamae-fazendo-massagem-para-bebes-mae-massageando-os-pes-descalcos-infantis-massagem-preventiva-para-recem-nascidos-mamae-acariciando-os-pes-do-bebe-com-as-duas-maos-sobre-fundo-claro_176532-13965.jpg?w=740&t=st=1676642619~exp=1676643219~hmac=5dc73230a416ef4c11e96f23f178057ff3ca88a757d717b2e4ec39a2d6bfb85f",
+        "descrição": "Abre os dedos dos pés em leque; pé se retorce",
+        "estimulo": "Acariciara planta do pé do bebê."
+    },
+
+    {
+        "name": "SUCÇÃO",
+        "image": "https://lunetas.com.br/wp-content/uploads/2018/04/istock-161683799.jpg",
+        "descrição": "Inicia automaticamente o movimento de sucção",
+        "estimulo": "Tocar os lábios, gengivas ou palato do bebê."
+    },
+    {
+        "name": "MARCHA",
+        "image": "https://img.freepik.com/fotos-gratis/familia-de-sorriso-feliz-no-estudio-no-fundo-da-arvore-de-natal-com-presente_1328-2101.jpg?w=740&t=st=1676642657~exp=1676643257~hmac=571eb9b22acbac9da30c8dfbaa33ff14c78707141f39d7134a8a43dab4e744ee",
+        "descrição": "Faz movimentos semelhantes ao de uma caminhada coordenada.",
+        "estimulo": "Segurar o bebê por baixo dos braços com os pés tocando uma superfície plana."
+    },
+
+    {
+        "name": "NATATÓRIO",
+        "image": "https://img.freepik.com/fotos-gratis/menino-bonito-mae-com-filho-familia-brincando-na-agua_1157-42258.jpg?w=740&t=st=1676642857~exp=1676643457~hmac=bb3e2077aaf26b6717b80f4909a6b277846beb52321f5716a2882b10ae2ea159",
+        "descrição": "Faz movimentos natatórios coordenados",
+        "estimulo": "O bebê é coloca na água com o rosto voltado para baixo."
+    }
+
+]

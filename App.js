@@ -1,11 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Home from './src/pages/home';
+import Menu from './src/pages/menu';
+import Reflexos from './src/pages/reflexos';
+import Rotas from './routes';
+import PicoCrescimento from './src/pages/picosCrescimento';
+import Saltos from './src/pages/saltos';
+import SaltosDetail from './src/pages/saltosDetail';
+import Competencias from './src/pages/competencias';
+
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Home></Home>
+      <Menu/>
     </View>
   );
 }
