@@ -8,12 +8,15 @@ import Saltos from './src/pages/saltos';
 import SaltosDetail from './src/pages/saltosDetail';
 import Competencias from './src/pages/competencias';
 import Calendario from './src/pages/calendarioVacinal';
+import Janelas from './src/pages/janelasDoSono/index'
+
 
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Calendario/>
+      <StatusBar style="auto" />
+      <Janelas />
     </View>
   );
 }

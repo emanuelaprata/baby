@@ -3,13 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TouchableOpacity, TouchableHighlight, ScrollView } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 
-import vacinas from './assets/vacinas.json'
-
-export default function Calendario() {
-
-    const [vacina, setVacina] = useState(
-        vacinas
-    )
+export default function Janelas() {
 
     const [activeTab, setActiveTab] = useState(0);
 
@@ -18,18 +12,13 @@ export default function Calendario() {
     }
 
     const tabs = [
-        "1 mês",
-        "2 meses",
-        "3 meses",
-        "4 meses",
-        "5 meses",
-        "6 meses",
-        "7 meses",
-        "8 meses",
-        "9 meses",
-        "10 meses",
-        "11 meses",
-        "12 meses",
+        "0",
+        "1-2 ",
+        "3-4",
+        "5-6",
+        "7-8",
+        "9-12",
+
     ];
 
     const renderTabs = () => {
@@ -64,13 +53,21 @@ export default function Calendario() {
         return (
             <View style={styles.content}>
                 <Text>
-                    {tabs[activeTab]}
+                    Dorme entre:
                 </Text>
+                <Text>
+                    Quantidade de sonecas por dia:
+                </Text>
+                <Text>
+                    Tempo das sonecas:
+                </Text>
+                <Text>
+                    Tempo acordado entre sonecas:
+                </Text>
+                
             </View>
         );
     };
-
-
 
 
     return (
@@ -80,26 +77,24 @@ export default function Calendario() {
                 <TouchableOpacity>
                     <Entypo name="chevron-thin-left" size={20} color="#573205" />
                 </TouchableOpacity>
-                <Text style={styles.textTitle}>Calendário Vacinal</Text>
+                <Text style={styles.textTitle}>Janelas do Sono</Text>
             </View>
 
-
-            <View style={styles.tabContainer}>
-                <ScrollView
-                    horizontal={true}
-                    horizontal showsHorizontalScrollIndicator={false}
-                    style={{ paddingTop: 10 }}>
-                    {renderTabs()}
-                </ScrollView>
-            </View>
 
             <View style={{ alignItems: 'center' }}>
-                    <Image source={require('./assets/icon.png')}
-                        style={styles.icon} />
-                </View>
+                <Image source={require('./assets/icon.png')}
+                    style={styles.icon} />
+            </View>
+
+            <View>
+                <Text>
+                    {renderTabs()}
+                    </Text>
+                    <Text style={{textAlign: 'center', fontSize: 12}}>meses</Text>
+            </View>
 
             <ScrollView>
-                               <View>
+                <View>
                     {renderContent()}
                 </View>
             </ScrollView>
@@ -121,7 +116,7 @@ const styles = StyleSheet.create({
     },
 
     icon: {
-        width: 318, height: 290
+        width: 318, height: 290, marginTop: 30
     }
     ,
     container2: {
