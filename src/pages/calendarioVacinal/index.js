@@ -63,7 +63,10 @@ export default function Calendario() {
         return (
             <View style={styles.content}>
                 <Text>
-                {vacina.map(i)}
+                    {vacina.map((item, i) => {
+                        return item.name === activeTab ? item.name : i + 1
+                    }
+                )}
                 </Text>
             </View>
         );
@@ -85,11 +88,11 @@ export default function Calendario() {
             <View style={styles.tabContainer}>
                 <ScrollView
                     horizontal={true}
+                    horizontal showsHorizontalScrollIndicator={false}
                     style={{ paddingTop: 10 }}>
                     {renderTabs()}
                 </ScrollView>
             </View>
-            <Text style={{ textAlign: 'center', fontSize: 15 }}>mês</Text>
 
             <ScrollView>
                 <View style={{ alignItems: 'center' }}>
