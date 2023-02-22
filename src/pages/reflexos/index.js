@@ -1,15 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity, ImageBackground, ScrollView } from 'react-native';
-import { Octicons, Feather, AntDesign, Entypo } from '@expo/vector-icons';
+import { Text, View, Image, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
+import { Entypo } from '@expo/vector-icons';
 import { List } from 'react-native-paper';
-import reflexos from './assets/reflexos.json'
 import { useState } from 'react';
 
-
-
+import reflexos from './assets/reflexos.json'
 
 export default function Reflexos() {
-
 
   const [expanded, setExpanded] = React.useState(true);
 
@@ -90,90 +87,5 @@ export default function Reflexos() {
     </View >
   );
 }
-
-const styles = StyleSheet.create({
-
-  flexRow: {
-    display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    alignItems: 'center'
-},
-
-
-  container: {
-    display: 'flex',
-    width: '100%',
-    height: '100%',
-    backgroundColor: '#EBEAEA',
-    alignItems: 'center',
-  },
-
-   containerOptions: {
-    width: '100%',
-    alignItems: 'center',
-  },
-
-  option: {
-    backgroundColor: '#F5F5F5',
-    width: '90%',
-    marginTop: 20,
-    borderRadius: 20,
-    shadowColor: '#AFAFAF',
-    shadowOffset: {
-      width: 0,
-      height: 4
-    },
-    shadowRadius: 5,
-    shadowOpacity: 1.0,
-    elevation: 3,
-  },
-
-  textOptions: {
-    fontSize: 15,
-    marginTop: 10,
-    color: '#573205',
-    width: '100%',
-    textAlign: 'center',
-    justifyContent: 'center'
-  },
-
-  textInfoTitle: {
-    fontSize: 15,
-    color: '#573205',
-    width: '100%',
-    fontWeight: 'bold',
-    marginHorizontal: 14,
-    marginTop: 5
-  },
-
-  textInfo: {
-    fontSize: 15,
-    color: '#573205',
-    width: '100%',
-    paddingHorizontal: 20,
-    paddingBottom: 10
-  },
-
-  image: {
-    width: '100%',
-    height: 200,
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20
-  },
-
-
-  itemAcordion: {
-    backgroundColor: '#E4C299',
-    shadowColor: '#blaCK',
-    shadowOffset: {
-      width: 0,
-      height: 4
-    },
-    shadowRadius: 5,
-    shadowOpacity: 1.0,
-    elevation: 3,
-  }
-})
 
 

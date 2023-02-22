@@ -2,7 +2,6 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, ImageBackground, ScrollView } from 'react-native';
 import { Octicons, Feather, AntDesign, Entypo } from '@expo/vector-icons';
 import Reflexos from '../reflexos';
-import { useNavigation } from '@react-navigation/native'
 import Saltos from '../saltos';
 
 
@@ -10,7 +9,6 @@ import Saltos from '../saltos';
 
 export default function Menu() {
 
-    const navigation = useNavigation();
 
     return (
         <View style={styles.container}>
@@ -78,9 +76,9 @@ export default function Menu() {
                     </TouchableOpacity>
 
                     <TouchableOpacity
-                     onPress={() => {
-                        navigation.navigate('Saltos')
-                    }}
+                    //  onPress={() => {
+                    //     navigation.navigate('Saltos')
+                    // }}
                         style={styles.optionThree}>
                         <View style={styles.flexRow}>
                             <View style={{ width: '65%', justifyContent: 'center' }}>

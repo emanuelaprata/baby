@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, ImageBackground, ScrollView } from 'react-native';
 import { Octicons, Feather, AntDesign, Entypo } from '@expo/vector-icons';
-import { List } from 'react-native-paper';
 import competencias from './assets/competencias.json'
 import { useState } from 'react';
 

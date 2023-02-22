@@ -7,12 +7,13 @@ import PicoCrescimento from './src/pages/picosCrescimento';
 import Saltos from './src/pages/saltos';
 import SaltosDetail from './src/pages/saltosDetail';
 import Competencias from './src/pages/competencias';
+import Calendario from './src/pages/calendarioVacinal';
 
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Menu/>
+      <Calendario/>
     </View>
   );
 }
