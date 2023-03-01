@@ -5,11 +5,13 @@ import competencias from './assets/competencias.json'
 import { useState } from 'react';
 import { useNavigation } from '@react-navigation/native'
 
-
-
-
-
 export default function Competencias() {
+
+    const navigation = useNavigation();
+
+    function goBack() {
+        navigation.goBack()
+    }
 
     const [items, setItems] = useState(
         competencias
@@ -20,6 +22,7 @@ export default function Competencias() {
 
             <View style={styles.flexRow}>
                 <TouchableOpacity style={{ marginLeft: 20 }}
+                onPress={goBack}
                 >
                     <Entypo name="chevron-thin-left" size={20} color="#573205" />
                 </TouchableOpacity>
