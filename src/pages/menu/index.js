@@ -42,6 +42,9 @@ export default function Menu() {
                     </TouchableOpacity>
 
                     <TouchableOpacity
+                    onPress={() => {
+                        navigation.navigate('Calendario', Calendario)
+                    }}
                         style={styles.optionOne}>
                         <View style={styles.flexRow}>
                             <View style={{ justifyContent: 'center', padding: 40, marginLeft: -40 }}>

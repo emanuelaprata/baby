@@ -3,13 +3,8 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TouchableOpacity, TouchableHighlight, ScrollView } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 
-import vacinas from './assets/vacinas.json'
 
 export default function Calendario() {
-
-    const [vacina, setVacina] = useState(
-        vacinas
-    )
 
     const [activeTab, setActiveTab] = useState(0);
 

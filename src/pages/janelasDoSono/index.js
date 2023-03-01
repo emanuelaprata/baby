@@ -63,11 +63,7 @@ export default function Janelas() {
         return (
 
             <ScrollView>
-                <View>
                     <View style={styles.flexRow}>
-                        <Image
-                            style={{ width: 35, height: 35 }} source={require('./assets/berco.png')}
-                        />
                         <Text>
                             Dorme entre:
                         </Text>
@@ -75,9 +71,7 @@ export default function Janelas() {
                     </View>
 
                     <View style={styles.flexRow}>
-                        <Image
-                            style={{ width: 50, height: 50 }} source={require('./assets/sono.png')}
-                        />
+
                         <Text>
                             Quantidade de sonecas por dia:
                         </Text>
@@ -85,9 +79,7 @@ export default function Janelas() {
                     </View>
 
                     <View style={styles.flexRow}>
-                        <Image
-                            style={{ width: 35, height: 35 }} source={require('./assets/relogio.png')}
-                        />
+
                         <Text>
                             Tempo das sonecas:
                         </Text>
@@ -95,18 +87,12 @@ export default function Janelas() {
                     </View>
 
                     <View style={styles.flexRow}>
-                        <Image
-                            style={{ width: 35, height: 35 }} source={require('./assets/acordado.png')}
-                        />
+
                         <Text>
                             Tempo acordado entre sonecas:
                         </Text>
                         <Text>2</Text>
                     </View>
-
-
-                </View>
-
 
             </ScrollView>
 
@@ -134,15 +120,15 @@ export default function Janelas() {
 
             <List.Accordion
                 title="O que é?"
-                style={styles.itemAcordion}
+
                 onPress={handlePress}>
-                <Text style={styles.textInfo}>Diz respeito ao crescimento físico. O crescimento não é constante, ele ocorre de forma mais intensa em alguns períodos específicos que chamamos de picos.</Text>
+                <Text style={styles.textInfo}>É o período de tempo ideal para que ele durma e descanse, levando em consideração sua idade e necessidades individuais. Manter um horário regular de sono e acordar pode ajudar a garantir que o bebê esteja descansado e alerta durante o dia e dormindo bem durante a noite.</Text>
             </List.Accordion>
 
             <ScrollView
                 horizontal={true}
                 horizontal showsHorizontalScrollIndicator={false}
-                >
+            >
                 <View>
 
                     <Text>

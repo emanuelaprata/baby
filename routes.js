@@ -13,8 +13,8 @@ function Rotas() {
 
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
-                <Stack.Screen name="Home" component={Menu} />
+            <Stack.Navigator initialRouteName="Menu" screenOptions={{ headerShown: false }}>
+                <Stack.Screen name="Menu" component={Menu} />
                 <Stack.Screen name="Saltos" component={Saltos} />
                 <Stack.Screen name="Calendario" component={Calendario} />
                 <Stack.Screen name="Reflexos" component={Reflexos} />
