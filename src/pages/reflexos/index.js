@@ -3,10 +3,18 @@ import { Text, View, Image, TouchableOpacity, ScrollView, StyleSheet } from 'rea
 import { Entypo } from '@expo/vector-icons';
 import { List } from 'react-native-paper';
 import { useState } from 'react';
+import { useNavigation } from '@react-navigation/native'
+import styles from './assets/styles'
 
 import reflexos from './assets/reflexos.json'
 
 export default function Reflexos() {
+
+  const navigation = useNavigation();
+    
+    function goBack() {
+        navigation.goBack()
+    }
 
   const [expanded, setExpanded] = React.useState(true);
 
@@ -21,14 +29,13 @@ export default function Reflexos() {
 
       <View style={styles.flexRow}>
         <TouchableOpacity style={{ marginLeft: 20 }}
+        onPress={goBack}
         >
           <Entypo name="chevron-thin-left" size={20} color="#573205" />
         </TouchableOpacity>
         <Text style={{ fontSize: 30, color: '#573205', marginTop: 90, textAlign: 'center', flexGrow: 1 }}>Reflexos Primitivos</Text>
 
       </View>
-
-      <View style={styles.containerOptions}>
 
         <ScrollView
           style={{ backgroundColor: '#EBEAEA', width: '100%' }}
@@ -81,8 +88,6 @@ export default function Reflexos() {
           </View>
 
         </ScrollView>
-
-      </View>
 
     </View >
   );

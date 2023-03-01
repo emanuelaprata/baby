@@ -1,12 +1,19 @@
 import React from 'react';
 import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
+import { useNavigation } from '@react-navigation/native'
 import { StyleSheet, Text, View, Image, TouchableOpacity, TouchableHighlight, ScrollView } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import { List } from 'react-native-paper';
 
 
 export default function Janelas() {
+
+    const navigation = useNavigation();
+    
+    function goBack() {
+        navigation.goBack()
+    }
 
     // Acordeon #######
     const [expandedList, setExpandedList] = React.useState(true);
@@ -106,7 +113,8 @@ export default function Janelas() {
         <View styles={styles.container}>
             <StatusBar style="auto" />
             <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 40 }}>
-                <TouchableOpacity>
+                <TouchableOpacity
+                 onPress={goBack}>
                     <Entypo name="chevron-thin-left" size={20} color="#573205" />
                 </TouchableOpacity>
                 <Text style={styles.textTitle}>Janelas do Sono</Text>

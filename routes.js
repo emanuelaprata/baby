@@ -6,6 +6,8 @@ import Menu from './src/pages/menu';
 import Calendario from './src/pages/calendarioVacinal/index.js';
 import Reflexos from './src/pages/reflexos/index.js';
 import Saltos from './src/pages/saltos/index.js';
+import Janelas from './src/pages/janelasDoSono';
+import PicoCrescimento from './src/pages/picosCrescimento';
 
 function Rotas() {
 
@@ -16,6 +18,8 @@ function Rotas() {
             <Stack.Navigator initialRouteName="Menu" screenOptions={{ headerShown: false }}>
                 <Stack.Screen name="Menu" component={Menu} />
                 <Stack.Screen name="Saltos" component={Saltos} />
+                <Stack.Screen name="Janelas" component={Janelas} />
+                <Stack.Screen name="PicoCrescimento" component={PicoCrescimento} />
                 <Stack.Screen name="Calendario" component={Calendario} />
                 <Stack.Screen name="Reflexos" component={Reflexos} />
             </Stack.Navigator>

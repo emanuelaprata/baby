@@ -4,6 +4,7 @@ import {Text, View, Image, TouchableOpacity,ScrollView, StyleSheet } from 'react
 import {AntDesign, Entypo } from '@expo/vector-icons';
 import { List } from 'react-native-paper';
 
+
 import saltos from './assets/saltos.json'
 
 export default function Saltos() {

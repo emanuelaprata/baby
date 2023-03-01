@@ -1,30 +1,37 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity, ImageBackground, ScrollView } from 'react-native';
-import { Octicons, Feather, AntDesign, Entypo } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native'
+import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from 'react-native';
 import Reflexos from '../reflexos';
 import Saltos from '../saltos';
+import Calendario from '../calendarioVacinal';
+import Janelas from '../janelasDoSono';
+import PicoCrescimento from '../picosCrescimento';
 
 
 
 
 export default function Menu() {
 
+    const navigation = useNavigation();
 
     return (
         <View style={styles.container}>
 
-            <View style={styles.containerBanner}>
+            {/* <View style={styles.containerBanner}>
                 <Image
                     style={{ width: '100%', height: '100%', borderBottomRightRadius: 70, borderBottomLeftRadius: 70, opacity: 0.6 }} source={require('./assets/back.jpeg')}
                 />
-            </View>
+            </View> */}
 
             <ScrollView
                 style={styles.containerOptions}>
 
                 <View style={{ alignItems: 'center' }}>
+
                     <TouchableOpacity
-                    
+                    onPress={() => {
+                        navigation.navigate(Janelas)
+                    }}                    
                         style={styles.option}>
                         <View style={styles.flexRow}>
                             <View style={{ justifyContent: 'center' }}>
@@ -43,7 +50,7 @@ export default function Menu() {
 
                     <TouchableOpacity
                     onPress={() => {
-                        navigation.navigate('Calendario', Calendario)
+                        navigation.navigate(Calendario)
                     }}
                         style={styles.optionOne}>
                         <View style={styles.flexRow}>
@@ -63,6 +70,9 @@ export default function Menu() {
                     </TouchableOpacity>
 
                     <TouchableOpacity
+                    // onPress={() => {
+                    //     navigation.navigate(Desenvolvimento)
+                    // }}
                         style={styles.optionTwo}>
                         <View style={styles.flexRow}>
                             <View style={{ width: '65%', justifyContent: 'center' }}>
@@ -79,9 +89,9 @@ export default function Menu() {
                     </TouchableOpacity>
 
                     <TouchableOpacity
-                    //  onPress={() => {
-                    //     navigation.navigate('Saltos')
-                    // }}
+                     onPress={() => {
+                        navigation.navigate('Saltos')
+                    }}
                         style={styles.optionThree}>
                         <View style={styles.flexRow}>
                             <View style={{ width: '65%', justifyContent: 'center' }}>
@@ -98,6 +108,9 @@ export default function Menu() {
                     </TouchableOpacity>
 
                     <TouchableOpacity
+                    onPress={() => {
+                        navigation.navigate(PicoCrescimento)
+                    }}
                         style={styles.option}>
                         <View style={styles.flexRow}>
                             <View style={{ justifyContent: 'center' }}>
@@ -150,8 +163,8 @@ export default function Menu() {
                     </TouchableOpacity>
 
                     <TouchableOpacity
-                    // onPress={() => {
-                    //     navigation.navigate( "Reflexos", Reflexos)}}
+                    onPress={() => {
+                        navigation.navigate(Reflexos)}}
                         style={styles.optionThree}>
                         <View style={styles.flexRow}>
                             <View style={{ width: '65%', justifyContent: 'center' }}>
@@ -169,26 +182,6 @@ export default function Menu() {
                 </View>
 
             </ScrollView>
-
-
-            <View style={styles.containerBaseboard}>
-                <TouchableOpacity
-                    style={styles.iconsRod}>
-                    <Entypo name="chevron-thin-left" size={28} color="#959595" />
-                </TouchableOpacity>
-
-                <TouchableOpacity>
-                    <Image
-                        style={{ width: 45, height: 45 }}
-                        source={require('../../assets/mais.png')}
-                    />
-                </TouchableOpacity>
-
-                <TouchableOpacity
-                    style={styles.iconsRod}>
-                    <AntDesign name="home" size={30} color="#959595" />
-                </TouchableOpacity>
-            </View>
 
         </View>
     );
@@ -293,18 +286,5 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: '#573205',
         marginLeft: 12
-    },
-
-    containerBaseboard: {
-        height: '8%',
-        width: '100%',
-        marginTop: 2,
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-    },
-    iconsRod: {
-        marginHorizontal: 45
     }
 })

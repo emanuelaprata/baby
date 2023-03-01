@@ -1,10 +1,17 @@
 import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
+import { useNavigation } from '@react-navigation/native'
 import { StyleSheet, Text, View, Image, TouchableOpacity, TouchableHighlight, ScrollView } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 
 
 export default function Calendario() {
+
+    const navigation = useNavigation();
+    
+    function goBack() {
+        navigation.goBack()
+    }
 
     const [activeTab, setActiveTab] = useState(0);
 
@@ -72,7 +79,9 @@ export default function Calendario() {
         <View styles={styles.container}>
             <StatusBar style="auto" />
             <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 40 }}>
-                <TouchableOpacity>
+                <TouchableOpacity
+                onPress={goBack}
+                >
                     <Entypo name="chevron-thin-left" size={20} color="#573205" />
                 </TouchableOpacity>
                 <Text style={styles.textTitle}>Calendário Vacinal</Text>

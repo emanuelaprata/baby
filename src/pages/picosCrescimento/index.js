@@ -2,8 +2,16 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import { List } from 'react-native-paper';
+import { useNavigation } from '@react-navigation/native'
+
 
 export default function PicoCrescimento() {
+
+    const navigation = useNavigation();
+    
+    function goBack() {
+        navigation.goBack()
+    }
 
     const [expanded, setExpanded] = React.useState(true);
 
@@ -14,6 +22,7 @@ export default function PicoCrescimento() {
 
             <View style={styles.flexRow}>
                 <TouchableOpacity style={{ marginLeft: 20 }}
+                 onPress={goBack}
                 >
                     <Entypo name="chevron-thin-left" size={20} color="#573205" />
                 </TouchableOpacity>

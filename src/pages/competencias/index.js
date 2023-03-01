@@ -3,6 +3,8 @@ import { StyleSheet, Text, View, Image, TouchableOpacity, ImageBackground, Scrol
 import { Octicons, Feather, AntDesign, Entypo } from '@expo/vector-icons';
 import competencias from './assets/competencias.json'
 import { useState } from 'react';
+import { useNavigation } from '@react-navigation/native'
+
 
 
 

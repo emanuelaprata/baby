@@ -1,23 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Menu from './src/pages/menu';
-import Reflexos from './src/pages/reflexos';
-import Rotas from './routes';
-import PicoCrescimento from './src/pages/picosCrescimento';
-import Saltos from './src/pages/saltos';
-import SaltosDetail from './src/pages/saltosDetail';
-import Competencias from './src/pages/competencias';
-import Calendario from './src/pages/calendarioVacinal';
-import Janelas from './src/pages/janelasDoSono/index'
-
-
+import Rotas from './routes.js';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <StatusBar style="auto" />
       <Rotas/>
-    </View>
   );
 }
 
