@@ -1,91 +1,50 @@
-import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity, ImageBackground, ScrollView } from 'react-native';
-import { Octicons, Feather, AntDesign, Entypo } from '@expo/vector-icons';
-import { List } from 'react-native-paper';
-import { useState } from 'react';
+import React from 'react'
+import { useNavigation } from '@react-navigation/native'
+import { AntDesign, Entypo } from '@expo/vector-icons';
 
+import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView, ScrollView, ImageBackground, Image } from 'react-native';
 
+export default function SaltosDetail({route}) {
 
-export default function SaltosDetail() {
+    const navigation = useNavigation();
 
-    const [expanded, setExpanded] = React.useState(true);
+    function goBack() {
+        navigation.goBack()
+    }
+    
+    // console.log(route.params)
 
-    const handlePress = () => setExpanded(!expanded);
-
+    const item = route.params.item
+    console.log(item)
 
     return (
+
         <View style={styles.container}>
 
-
-
-            <ScrollView style={{ width: '100%' }}>
-                {items.map((item, i) => {
-                    return (
-                        <View>
-                            <View style={styles.flexRow}>
-                                <TouchableOpacity style={{ marginLeft: 20 }}
-                                >
-                                    <Entypo name="chevron-thin-left" size={20} color="#573205" />
-                                </TouchableOpacity>
-                                <Text style={styles.textHeader}>{item.name}</Text>
-                            </View>
-
-                            <ScrollView>
-                                <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-                                    <Image
-                                        style={{
-                                            width: 200, height: 200
-                                        }}
-                                        source={{ uri: `${item.image}` }} />
-                                    <Text style={styles.textInfo}>
-                                        {item.details}
-                                    </Text>
-
-                                    <View>
-                                        <Text style={styles.textInfoTitle}>Sinais:</Text>
-                                        <Text>{item.sinais}</Text>
-                                    </View>
-                                </View>
-                            </ScrollView>
-
-
-                        </View>
-
-                    )
-                })}
-
-            </ScrollView>
-
-            <View style={styles.flexRow}>
-                <TouchableOpacity
-                    style={{
-                        flexGrow: 1, isplay: 'flex',
-                        flexDirection: 'row',
-                        flexWrap: 'wrap',
-                        alignItems: 'center'
-                    }}>
-                    <Entypo name="chevron-thin-left" size={10} color="#573205" />
-                    <Text>Salto anterior</Text>
+<View style={styles.flexRow}>
+                <TouchableOpacity style={{ marginLeft: 20, flexGrow: 1 }}
+                    onPress={goBack}
+                >
+                    <Entypo name="chevron-thin-left" size={20} color="#573205" />
                 </TouchableOpacity>
+                <Text style={{ fontSize: 25, color: '#573205', marginTop: 100, textAlign: 'center', flexGrow: 1 }}>{item.name}</Text>
 
-                <TouchableOpacity
-                    style={styles.flexRow}>
-                    <Text>Próximo Salto</Text>
-                    <Entypo name="chevron-thin-right" size={10} color="#573205" />
-                </TouchableOpacity>
             </View>
-        </View >
+
+            <View>
+                
+                <Text>{item.details}</Text>
+            </View> 
+        </View> 
     );
 }
 
 const styles = StyleSheet.create({
-
     flexRow: {
         display: 'flex',
         flexDirection: 'row',
         flexWrap: 'wrap',
-        alignItems: 'center',
-        margin: 10,
+        alignItems: 'center'
     },
 
     container: {
@@ -103,26 +62,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#DFDADA',
         justifyContent: 'center',
         alignItems: 'center',
-    },
-
-    textHeader: {
-        fontSize: 30, color: '#573205', marginTop: 50, textAlign: 'center', flexGrow: 1
-    },
-
-    textInfo: {
-        fontSize: 17,
-        color: '#573205',
-        width: '100%',
-        margin: 10,
-        textAlign: 'center'
-    },
-
-    textInfoTitle: {
-        fontSize: 17,
-        color: '#573205',
-        width: '100%',
-        margin: 10,
-        textAlign: 'center',
-        fontWeight: 'bold'
     }
-})
+    
+});

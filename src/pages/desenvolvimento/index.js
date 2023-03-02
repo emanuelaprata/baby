@@ -68,7 +68,7 @@ export default function Desenvolvimento() {
         return (
             <View style={styles.content}>
                 <View
-                style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', width: 300, height: 50, borderRadius: 50, backgroundColor: '#D5DEEB', justifyContent: 'center', alignItems: 'center', marginTop: 30 }}>
+                style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', width: 300, height: 50, borderRadius: 50, backgroundColor: '#D5DEEB', justifyContent: 'center', textAlign: 'center', marginTop: 30 }}>
                     <Text>Altura:</Text>
                     <Text>X</Text>
                     <Text>Peso:</Text>
@@ -83,16 +83,24 @@ export default function Desenvolvimento() {
                 <Text>Descrição do desenvolvimento</Text>
                 </View>
 
-                <View>
+                <View style={styles.flexRow}>
                 <Image source={require('./assets/favo.png')}
-                        style={styles.icon} />
-                    <Text>Marcos no desenvolvimento:</Text>
+                        style={styles.icon2} />
+                <View>
+                <Text>Marcos no desenvolvimento:</Text>
+                <Text>infos</Text>
+                </View>
+                    
                 </View>
 
+                <View style={styles.flexRow}>
+                <Image source={require('./assets/brinc.png')}
+                        style={styles.icon2} />
                 <View>
-                <Image source={require('./assets/icon.png')}
-                        style={styles.icon} />
-                    <Text>Sugestões de brincadeiras:</Text>
+                <Text>Sugestões de brincadeiras:</Text>
+                <Text>infos</Text>
+                </View>
+                   
                 </View>
 
 
@@ -151,7 +159,7 @@ const styles = StyleSheet.create({
     },
 
     flexRow: {
-        display: 'flex', flexDirection: 'row', flexWrap: 'wrap'
+        display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent:'center', alignItems: 'center', padding: 15
     },
 
     textTitle: {
@@ -160,6 +168,10 @@ const styles = StyleSheet.create({
 
     icon: {
         width: 300, height: 155
+    }, 
+
+    icon2: {
+        width: 50, height: 50
     }
     ,
     container2: {

@@ -9,6 +9,8 @@ import Saltos from './src/pages/saltos/index.js';
 import Janelas from './src/pages/janelasDoSono';
 import PicoCrescimento from './src/pages/picosCrescimento';
 import Desenvolvimento from './src/pages/desenvolvimento';
+import Competencias from './src/pages/competencias';
+import SaltosDetail from './src/pages/saltosDetail';
 
 function Rotas() {
 
@@ -23,7 +25,9 @@ function Rotas() {
                 <Stack.Screen name="PicoCrescimento" component={PicoCrescimento} />
                 <Stack.Screen name="Calendario" component={Calendario} />
                 <Stack.Screen name="Reflexos" component={Reflexos} />
+                <Stack.Screen name="Competencias" component={Competencias} />
                 <Stack.Screen name="Desenvolvimento" component={Desenvolvimento} />
+                <Stack.Screen name="SaltosDetail" component={SaltosDetail} />
             </Stack.Navigator>
         </NavigationContainer>
     );

@@ -1,13 +1,21 @@
 import React from 'react';
-import {useState} from 'react';
-import {Text, View, Image, TouchableOpacity,ScrollView, StyleSheet } from 'react-native';
-import {AntDesign, Entypo } from '@expo/vector-icons';
+import { useState } from 'react';
+import { Text, View, Image, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
+import { AntDesign, Entypo } from '@expo/vector-icons';
 import { List } from 'react-native-paper';
+import { useNavigation } from '@react-navigation/native'
 
 
 import saltos from './assets/saltos.json'
+import SaltosDetail from '../saltosDetail';
 
 export default function Saltos() {
+
+    const navigation = useNavigation();
+
+    function goBack() {
+        navigation.goBack()
+    }
 
     const [expanded, setExpanded] = React.useState(true);
 
@@ -15,13 +23,14 @@ export default function Saltos() {
 
     const [items, setItems] = useState(
         saltos
-      )
+    )
 
     return (
         <View style={styles.container}>
 
             <View style={styles.flexRow}>
                 <TouchableOpacity style={{ marginLeft: 20, flexGrow: 1 }}
+                    onPress={goBack}
                 >
                     <Entypo name="chevron-thin-left" size={20} color="#573205" />
                 </TouchableOpacity>
@@ -38,40 +47,44 @@ export default function Saltos() {
                                 width: 350, height: 100, marginBottom: 20
                             }} />
                     </View>
-                   
-                            <Text style={styles.textInfo2}>Os saltos de desenvolvimento estão relacionados com novas habilidades que o bebê conquista.
-</Text>
-                       
+
+                    <Text style={styles.textInfo2}>Os saltos de desenvolvimento estão relacionados com novas habilidades que o bebê conquista.
+                    </Text>
+
                     <List.Section>
                         <List.Accordion
                             title="Quando podemos perceber?"
                             style={styles.itemAcordion}
                             onPress={handlePress}>
                             <Text style={styles.textInfo2}>Quando isso ocorre, o bebê experimenta muitas sensações e emoções novas, o que pode acabar alterando a rotina, alterando o sono o deixando agitado, relutante para suas sonecas e irritado ao fim do dia, ele pode ficar mais choroso, mais carente. Nesse momento o bebê precisa de muito carinho, atenção e contato físico, para que ela se sinta segura e amparada.
-</Text>
+                            </Text>
                         </List.Accordion>
                     </List.Section>
 
 
                     <View style={styles.flexRow}>
 
-                        
-                            {items.map((item, i) => {
-                                const tipo = item
 
-                                return (
-                                    <TouchableOpacity style={styles.card}>
-                                        <AntDesign name="rocket1" size={34} color="black" />
-                                        <View style={styles.flexRow}>
-                                            <View style={{ paddingRight: 20 }}>
-                                                <Text style={styles.textInfoTitle}>{item.name}</Text>
-                                                <Text style={styles.textInfo}>{item.time}</Text>
-                                            </View>
-                                            <AntDesign name="right" size={18} color="#6D0F76" />
+                        {items.map((item, i) => {
+                            return (
+                                <TouchableOpacity style={styles.card}
+                                onPress={() => {
+                                    navigation.navigate('SaltosDetail', {item})
+                               }}
+                                >
+                                    <AntDesign name="rocket1" size={34} color="black" />
+                                    <View 
+                                    key={i}
+                                    style={styles.flexRow}>
+                                        <View style={{ paddingRight: 20 }}>
+                                            <Text style={styles.textInfoTitle}>{item.name}</Text>
+                                            <Text style={styles.textInfo}>{item.time}</Text>
                                         </View>
-                                    </TouchableOpacity>
-                                )
-                            })}
+                                        <AntDesign name="right" size={18} color="#6D0F76" />
+                                    </View>
+                                </TouchableOpacity>
+                            )
+                        })}
                     </View>
                 </View>
             </ScrollView>
@@ -145,6 +158,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         margin: '2%',
         justifyContent: 'center',
-        
+
     }
 })

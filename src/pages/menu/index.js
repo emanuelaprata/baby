@@ -7,6 +7,7 @@ import Calendario from '../calendarioVacinal';
 import Janelas from '../janelasDoSono';
 import PicoCrescimento from '../picosCrescimento';
 import Desenvolvimento from '../desenvolvimento';
+import Competencias from '../competencias';
 
 
 
@@ -135,6 +136,9 @@ export default function Menu() {
 
 
                     <TouchableOpacity
+                    onPress={() => {
+                        navigation.navigate(Competencias)
+                    }}
                         style={styles.optionOne}>
                         <View style={styles.flexRow}>
                             <View style={{ width: '65%', justifyContent: 'center' }}>
@@ -153,6 +157,9 @@ export default function Menu() {
                     </TouchableOpacity>
 
                     <TouchableOpacity
+                    onPress={() => {
+                        navigation.navigate(Competencias)
+                    }}
                         style={styles.optionTwo}>
                         <View style={styles.flexRow}>
                             <View style={{ width: '65%', justifyContent: 'center' }}>
