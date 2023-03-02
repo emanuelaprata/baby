@@ -6,6 +6,7 @@ import Saltos from '../saltos';
 import Calendario from '../calendarioVacinal';
 import Janelas from '../janelasDoSono';
 import PicoCrescimento from '../picosCrescimento';
+import Desenvolvimento from '../desenvolvimento';
 
 
 
@@ -17,21 +18,26 @@ export default function Menu() {
     return (
         <View style={styles.container}>
 
-            {/* <View style={styles.containerBanner}>
-                <Image
-                    style={{ width: '100%', height: '100%', borderBottomRightRadius: 70, borderBottomLeftRadius: 70, opacity: 0.6 }} source={require('./assets/back.jpeg')}
-                />
-            </View> */}
+            <View style={styles.containerBanner}>
+                {/* <Image
+                    style={{ width: '100%', height: '100%', opacity: 0.6 }} source={require('./assets/back.jpeg')}
+                /> */}
+            <Text style={{ justifyContent: 'flex-start', fontSize: 28, textAlign: 'left', paddingBottom: 10, paddingLeft: 15 }}>O que veremos hoje?</Text>
+            </View>
+
+
 
             <ScrollView
                 style={styles.containerOptions}>
 
+
+
                 <View style={{ alignItems: 'center' }}>
 
                     <TouchableOpacity
-                    onPress={() => {
-                        navigation.navigate(Janelas)
-                    }}                    
+                        onPress={() => {
+                            navigation.navigate(Janelas)
+                        }}
                         style={styles.option}>
                         <View style={styles.flexRow}>
                             <View style={{ justifyContent: 'center' }}>
@@ -49,9 +55,9 @@ export default function Menu() {
                     </TouchableOpacity>
 
                     <TouchableOpacity
-                    onPress={() => {
-                        navigation.navigate(Calendario)
-                    }}
+                        onPress={() => {
+                            navigation.navigate(Calendario)
+                        }}
                         style={styles.optionOne}>
                         <View style={styles.flexRow}>
                             <View style={{ justifyContent: 'center', padding: 40, marginLeft: -40 }}>
@@ -70,9 +76,9 @@ export default function Menu() {
                     </TouchableOpacity>
 
                     <TouchableOpacity
-                    // onPress={() => {
-                    //     navigation.navigate(Desenvolvimento)
-                    // }}
+                        onPress={() => {
+                            navigation.navigate(Desenvolvimento)
+                        }}
                         style={styles.optionTwo}>
                         <View style={styles.flexRow}>
                             <View style={{ width: '65%', justifyContent: 'center' }}>
@@ -89,9 +95,9 @@ export default function Menu() {
                     </TouchableOpacity>
 
                     <TouchableOpacity
-                     onPress={() => {
-                        navigation.navigate('Saltos')
-                    }}
+                        onPress={() => {
+                            navigation.navigate('Saltos')
+                        }}
                         style={styles.optionThree}>
                         <View style={styles.flexRow}>
                             <View style={{ width: '65%', justifyContent: 'center' }}>
@@ -108,9 +114,9 @@ export default function Menu() {
                     </TouchableOpacity>
 
                     <TouchableOpacity
-                    onPress={() => {
-                        navigation.navigate(PicoCrescimento)
-                    }}
+                        onPress={() => {
+                            navigation.navigate(PicoCrescimento)
+                        }}
                         style={styles.option}>
                         <View style={styles.flexRow}>
                             <View style={{ justifyContent: 'center' }}>
@@ -118,7 +124,7 @@ export default function Menu() {
                                     Picos de Crescimento
                                 </Text>
                             </View>
-                            <View style={{alignItems: 'flex-end', marginLeft: 15}}>
+                            <View style={{ alignItems: 'flex-end', marginLeft: 15 }}>
                                 <Image
                                     style={{ width: 100, height: 100, marginTop: -9 }} source={require('./assets/picos.png')}
                                 />
@@ -126,21 +132,21 @@ export default function Menu() {
 
                         </View>
                     </TouchableOpacity>
-                    
+
 
                     <TouchableOpacity
                         style={styles.optionOne}>
                         <View style={styles.flexRow}>
-                            <View style={{ justifyContent: 'center', padding: 40, marginLeft: -40 }}>
+                            <View style={{ width: '65%', justifyContent: 'center' }}>
                                 <Text style={styles.textOptions}>
                                     Marcos do Desenvolvimento
                                 </Text>
                             </View>
 
                             <View >
-                                {/* <Image
-                                    style={{ width: 110, height: 120 }} source={require('./assets/vacina.png')}
-                                /> */}
+                                <Image
+                                    style={{ width: 110, height: 120 }} source={require('./assets/desenvolvimento.png')}
+                                />
                             </View>
 
                         </View>
@@ -155,16 +161,17 @@ export default function Menu() {
                                 </Text>
                             </View>
                             <View>
-                                {/* <Image
+                                <Image
                                     style={{ width: 90, height: 100, marginTop: -9 }} source={require('./assets/desenvolvimento.png')}
-                                /> */}
+                                />
                             </View>
                         </View>
                     </TouchableOpacity>
 
                     <TouchableOpacity
-                    onPress={() => {
-                        navigation.navigate(Reflexos)}}
+                        onPress={() => {
+                            navigation.navigate(Reflexos)
+                        }}
                         style={styles.optionThree}>
                         <View style={styles.flexRow}>
                             <View style={{ width: '65%', justifyContent: 'center' }}>
@@ -204,8 +211,9 @@ const styles = StyleSheet.create({
     },
 
     containerBanner: {
-        height: '25%',
+        height: '15%',
         width: '100%',
+        justifyContent: 'flex-end',
         backgroundColor: '#EBEAEA',
     },
 
@@ -216,7 +224,7 @@ const styles = StyleSheet.create({
     },
 
     option: {
-        backgroundColor: '#DDAE76',
+        backgroundColor: '#A0CEDD',
         width: 347,
         height: 92,
         borderRadius: 30,
@@ -233,7 +241,7 @@ const styles = StyleSheet.create({
     },
 
     optionOne: {
-        backgroundColor: '#DDAE76',
+        backgroundColor: '#FDC571',
         width: 347,
         height: 92,
         borderRadius: 30,
@@ -251,7 +259,7 @@ const styles = StyleSheet.create({
     },
 
     optionTwo: {
-        backgroundColor: '#DDAE76',
+        backgroundColor: '#B2B1ED',
         width: 347,
         height: 92,
         borderRadius: 30,
@@ -267,7 +275,7 @@ const styles = StyleSheet.create({
     },
 
     optionThree: {
-        backgroundColor: '#DDAE76',
+        backgroundColor: '#A1E2A8',
         width: 347,
         height: 92,
         borderRadius: 30,

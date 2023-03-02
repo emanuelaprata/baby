@@ -7,7 +7,7 @@ import { List } from 'react-native-paper';
 
 
 
-export default function Calendario() {
+export default function Desenvolvimento() {
 
     const navigation = useNavigation();
     
@@ -67,9 +67,35 @@ export default function Calendario() {
     const renderContent = () => {
         return (
             <View style={styles.content}>
+                <View
+                style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', width: 300, height: 50, borderRadius: 50, backgroundColor: '#D5DEEB', justifyContent: 'center', alignItems: 'center', marginTop: 30 }}>
+                    <Text>Altura:</Text>
+                    <Text>X</Text>
+                    <Text>Peso:</Text>
+                    <Text>X</Text>
+                </View>
+
+                <View>
                 <Text>
                     {tabs[activeTab]}
+                    
                 </Text>
+                <Text>Descrição do desenvolvimento</Text>
+                </View>
+
+                <View>
+                <Image source={require('./assets/favo.png')}
+                        style={styles.icon} />
+                    <Text>Marcos no desenvolvimento:</Text>
+                </View>
+
+                <View>
+                <Image source={require('./assets/icon.png')}
+                        style={styles.icon} />
+                    <Text>Sugestões de brincadeiras:</Text>
+                </View>
+
+
             </View>
         );
     };
@@ -86,7 +112,7 @@ export default function Calendario() {
                 >
                     <Entypo name="chevron-thin-left" size={20} color="#573205" />
                 </TouchableOpacity>
-                <Text style={styles.textTitle}>Calendário Vacinal</Text>
+                <Text style={styles.textTitle}>Desenvolvimento</Text>
             </View>
 
 
@@ -133,7 +159,7 @@ const styles = StyleSheet.create({
     },
 
     icon: {
-        width: 318, height: 290
+        width: 300, height: 155
     }
     ,
     container2: {

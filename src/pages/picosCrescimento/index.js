@@ -47,7 +47,6 @@ export default function PicoCrescimento() {
                     </List.Section>
 
 
-
                     <List.Section
                     style={{marginBottom: 30}}>
                         <List.Accordion

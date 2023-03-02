@@ -126,12 +126,20 @@ export default function Janelas() {
                     style={styles.icon} />
             </View>
 
-            <List.Accordion
-                title="O que é?"
+            <View
+            style={{backgroundColor: '#F4F3F3',
+            paddingHorizontal: 40}}>
+            <List.Section >
+                        <List.Accordion
+                            title="O que é?"
+                            style={styles.itemAcordion}
+                            onPress={handlePress}>
+                            <Text style={styles.textInfo}>Refere-se ao período de tempo durante o qual um bebê está pronto para dormir, geralmente indicado por sinais de cansaço ou sonolência. É importante que os pais observem os sinais de cansaço e aprendam a identificar a janela de sono do bebê para ajudá-lo a dormir adequadamente. </Text>
+                        </List.Accordion>
+                    </List.Section>
+            </View>
 
-                onPress={handlePress}>
-                <Text style={styles.textInfo}>É o período de tempo ideal para que ele durma e descanse, levando em consideração sua idade e necessidades individuais. Manter um horário regular de sono e acordar pode ajudar a garantir que o bebê esteja descansado e alerta durante o dia e dormindo bem durante a noite.</Text>
-            </List.Accordion>
+            
 
             <ScrollView
                 horizontal={true}
@@ -187,10 +195,10 @@ const styles = StyleSheet.create({
     },
     tabText: {
         fontSize: 20,
-        color: "#333",
+        color: "#C6B198",
     },
     activeTabText: {
-        color: "#CF8B3B",
+        color: "#573205",
     },
     content: {
         flex: 1,
@@ -199,6 +207,7 @@ const styles = StyleSheet.create({
 
     textInfo: {
         fontSize: 15,
+        marginTop: 10,
         color: '#573205',
         width: '100%',
         textAlign: 'center'
@@ -206,8 +215,6 @@ const styles = StyleSheet.create({
 
     itemAcordion: {
         backgroundColor: '#DDAE76',
-        marginHorizontal: 20,
-        marginVertical: 10
     },
 });
 
