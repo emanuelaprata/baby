@@ -1,18 +1,19 @@
 [
     {
         "name": "1 mes",
-        "vacinas": [{"name": "BCG"}, {"name": "Hepatite B"}]
+        "vacinas": [{"name": "BCG", "illness": "Tuberculose"}, {"name": "Hepatite B", "illness": "Hepatite"}]
+
+    },
+    {
+        "name": "2 mes",
+        "vacinas": [{"name": "HEF"}, {"name": "Hepatite B"}]
+    },
+    {
+        "name": "3 mes",
+        "vacinas": [{"name": "DSD"}, {"name": "Hepatite B"}, {"name": "Hepatite B"}]
     },
     {
         "name": "1 mes",
-        "vacinas": [{"name": "BCG"}, {"name": "Hepatite B"}]
-    },
-    {
-        "name": "1 mes",
-        "vacinas": [{"name": "BCG"}, {"name": "Hepatite B"}]
-    },
-    {
-        "name": "1 mes",
-        "vacinas": [{"name": "BCG"}, {"name": "Hepatite B"}]
+        "vacinas": [{"name": "XDD"}, {"name": "Hepatite B"}]
     }
 ]

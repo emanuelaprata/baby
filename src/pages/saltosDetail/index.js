@@ -27,12 +27,17 @@ export default function SaltosDetail({route}) {
                 >
                     <Entypo name="chevron-thin-left" size={20} color="#573205" />
                 </TouchableOpacity>
-                <Text style={{ fontSize: 25, color: '#573205', marginTop: 100, textAlign: 'center', flexGrow: 1 }}>{item.name}</Text>
-
             </View>
 
+            
+
             <View>
-                
+            <Text style={{ fontSize: 25, color: '#573205', textAlign: 'center'}}>{item.name}</Text>
+                <Text style={{ fontSize: 15, color: '#573205', textAlign: 'center'}}>{item.time}</Text>
+                <Image
+                        source={{ uri: `${item.image}` }}
+                        style={{width: 199, height: 299}}
+                    />
                 <Text>{item.details}</Text>
             </View> 
         </View> 

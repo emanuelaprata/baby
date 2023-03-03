@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { useNavigation } from '@react-navigation/native'
@@ -5,6 +6,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity, TouchableHighlight, Sc
 import { Entypo } from '@expo/vector-icons';
 import { List } from 'react-native-paper';
 
+import calendario from './assets/calendario.json'
 
 
 export default function Calendario() {
@@ -15,29 +17,22 @@ export default function Calendario() {
         navigation.goBack()
     }
 
+    const [expanded, setExpanded] = React.useState(true);
+
+    const handlePressContent = () => setExpanded(!expanded);
+
     const [activeTab, setActiveTab] = useState(0);
 
     const handlePress = (tabIndex) => {
         setActiveTab(tabIndex);
     }
 
-    const tabs = [
-        "1 mês",
-        "2 meses",
-        "3 meses",
-        "4 meses",
-        "5 meses",
-        "6 meses",
-        "7 meses",
-        "8 meses",
-        "9 meses",
-        "10 meses",
-        "11 meses",
-        "12 meses",
-    ];
+    const [items, setItems] = React.useState(
+        calendario
+    )
 
     const renderTabs = () => {
-        return tabs.map((tab, i) => {
+        return items.map((item, i) => {
             return (
                 <TouchableHighlight
                     key={i}
@@ -56,26 +51,38 @@ export default function Calendario() {
                                 activeTab === i ? styles.activeTabText : null,
                             ]}
                         >
-                            {tab}
+                            {item.name}
+
+                          
                         </Text>
                     </View>
                 </TouchableHighlight>
             );
-        });
+        })
+        
     };
 
     const renderContent = () => {
-        return (
-            <View style={styles.content}>
-                <Text>
-                    {tabs[activeTab]}
-                </Text>
+        return(
+            <View>
+                {items[activeTab].vacinas.map((item, i) => {
+            return (
+                <List.Section
+                style={{ marginBottom: 10,  }}>
+                <List.Accordion
+                    title={item.name}
+                    style={styles.acordion}
+                    onPress={handlePressContent}>
+                    <Text style={styles.textInfo}>{item.illness}</Text>
+                </List.Accordion>
+            </List.Section>
+            )
+        })}
             </View>
-        );
+        )
     };
 
-
-
+    
 
     return (
         <View styles={styles.container}>
@@ -107,11 +114,10 @@ export default function Calendario() {
             <ScrollView>
                                <View>
                                <View
-            style={{backgroundColor: '#F4F3F3',
+            style={{
             paddingHorizontal: 40}}>
             
             </View>
-
                     {renderContent()}
                 </View>
             </ScrollView>
@@ -163,6 +169,16 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
+    },
+
+    acordion: {
+        backgroundColor: '#E2FFCC',
+        borderRadius: 10,
+        height: 50,
+        marginLeft: '10%',
+        marginRight: '10%',
+        
+
     },
 });
 
