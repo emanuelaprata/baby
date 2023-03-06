@@ -68,12 +68,14 @@ export default function Calendario() {
                 {items[activeTab].vacinas.map((item, i) => {
             return (
                 <List.Section
-                style={{ marginBottom: 10,  }}>
+                style={{ marginBottom: 10}}>
                 <List.Accordion
                     title={item.name}
                     style={styles.acordion}
                     onPress={handlePressContent}>
                     <Text style={styles.textInfo}>{item.illness}</Text>
+                    <Text>Via de administração:</Text>
+                    <Text style={styles.textInfo}>{item.via}</Text>
                 </List.Accordion>
             </List.Section>
             )
@@ -177,8 +179,6 @@ const styles = StyleSheet.create({
         height: 50,
         marginLeft: '10%',
         marginRight: '10%',
-        
-
     },
 });
 
