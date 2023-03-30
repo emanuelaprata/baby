@@ -1,19 +1,23 @@
+import React from 'react';
 import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { useNavigation } from '@react-navigation/native'
 import { StyleSheet, Text, View, Image, TouchableOpacity, TouchableHighlight, ScrollView } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
-import { List } from 'react-native-paper';
 
-
+import infos from './assets/desenvolvimento.json'
 
 export default function Desenvolvimento() {
 
     const navigation = useNavigation();
-    
+
     function goBack() {
         navigation.goBack()
     }
+
+    const [items, setItems] = React.useState(
+        infos
+    )
 
     const [activeTab, setActiveTab] = useState(0);
 
@@ -21,23 +25,8 @@ export default function Desenvolvimento() {
         setActiveTab(tabIndex);
     }
 
-    const tabs = [
-        "1 mês",
-        "2 meses",
-        "3 meses",
-        "4 meses",
-        "5 meses",
-        "6 meses",
-        "7 meses",
-        "8 meses",
-        "9 meses",
-        "10 meses",
-        "11 meses",
-        "12 meses",
-    ];
-
     const renderTabs = () => {
-        return tabs.map((tab, i) => {
+        return items.map((item, i) => {
             return (
                 <TouchableHighlight
                     key={i}
@@ -56,7 +45,7 @@ export default function Desenvolvimento() {
                                 activeTab === i ? styles.activeTabText : null,
                             ]}
                         >
-                            {tab}
+                            {item.name}
                         </Text>
                     </View>
                 </TouchableHighlight>
@@ -68,42 +57,41 @@ export default function Desenvolvimento() {
         return (
             <View style={styles.content}>
                 <View
-                style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', width: 300, height: 50, borderRadius: 50, backgroundColor: '#D5DEEB', justifyContent: 'center', textAlign: 'center', marginTop: 30 }}>
+                    style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', width: 300, height: 50, borderRadius: 50, backgroundColor: '#D5DEEB', justifyContent: 'center', textAlign: 'center', marginTop: 30 }}>
                     <Text>Altura:</Text>
-                    <Text>X</Text>
+                    <Text>{items[activeTab].height}</Text>
                     <Text>Peso:</Text>
-                    <Text>X</Text>
+                    <Text>{items[activeTab].weight}</Text>
                 </View>
 
-                <View>
-                <Text>
-                    {tabs[activeTab]}
-                    
-                </Text>
-                <Text>Descrição do desenvolvimento</Text>
-                </View>
+                <Text
+                    style={{
+                        margin:20, textAlign: 'auto', fontSize: 17
+                    }}
+                    >{items[activeTab].description}</Text>
+                    <View style={styles.flexRow}>
+                        <Image source={require('./assets/brinc.png')}
+                            style={styles.icon2} />
+                        <View>
+                            <Text>Sugestões de brincadeiras:</Text>
+                            <Text>{items[activeTab].joke}</Text>
+                        </View>
 
-                <View style={styles.flexRow}>
-                <Image source={require('./assets/favo.png')}
-                        style={styles.icon2} />
-                <View>
-                <Text>Marcos no desenvolvimento:</Text>
-                <Text>infos</Text>
-                </View>
-                    
-                </View>
+                    </View>
 
-                <View style={styles.flexRow}>
-                <Image source={require('./assets/brinc.png')}
-                        style={styles.icon2} />
-                <View>
-                <Text>Sugestões de brincadeiras:</Text>
-                <Text>infos</Text>
-                </View>
+
                    
-                </View>
+                    {/* <View style={styles.flexRow}>
+                        <Image source={require('./assets/favo.png')}
+                            style={styles.icon2} />
+                        <View>
+                            <Text>Marcos no desenvolvimento:</Text>
+                            <Text>infos</Text>
+                        </View>
 
+                    </View> */}
 
+                    
             </View>
         );
     };
@@ -116,7 +104,7 @@ export default function Desenvolvimento() {
             <StatusBar style="auto" />
             <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 40 }}>
                 <TouchableOpacity
-                onPress={goBack}
+                    onPress={goBack}
                 >
                     <Entypo name="chevron-thin-left" size={20} color="#573205" />
                 </TouchableOpacity>
@@ -134,21 +122,16 @@ export default function Desenvolvimento() {
             </View>
 
             <View style={{ alignItems: 'center' }}>
-                    <Image source={require('./assets/icon.png')}
-                        style={styles.icon} />
-                </View>
+                <Image source={require('./assets/icon.png')}
+                    style={styles.icon} />
+                                        {renderContent()}
 
-            <ScrollView>
-                               <View>
-                               <View
-            style={{backgroundColor: '#F4F3F3',
-            paddingHorizontal: 40}}>
-            
             </View>
+            
 
-                    {renderContent()}
-                </View>
-            </ScrollView>
+        <View>
+            
+        </View>
         </View>
     )
 }
@@ -159,7 +142,7 @@ const styles = StyleSheet.create({
     },
 
     flexRow: {
-        display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent:'center', alignItems: 'center', padding: 15
+        display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', padding: 15
     },
 
     textTitle: {
@@ -168,7 +151,7 @@ const styles = StyleSheet.create({
 
     icon: {
         width: 300, height: 155
-    }, 
+    },
 
     icon2: {
         width: 50, height: 50

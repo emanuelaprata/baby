@@ -4,13 +4,14 @@ import { StatusBar } from 'expo-status-bar';
 import { useNavigation } from '@react-navigation/native'
 import { StyleSheet, Text, View, Image, TouchableOpacity, TouchableHighlight, ScrollView } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
-import { List } from 'react-native-paper';
-
+import infos from './assets/janelasDoSono.json'
 
 export default function Janelas() {
 
     const navigation = useNavigation();
-    
+
+
+
     function goBack() {
         navigation.goBack()
     }
@@ -28,18 +29,12 @@ export default function Janelas() {
         setActiveTab(tabIndex);
     }
 
-    const tabs = [
-        "0 meses",
-        "1-2 meses",
-        "3-4 meses",
-        "5-6 meses",
-        "7-8 meses",
-        "9-12 meses",
-
-    ];
+    const [items, setItems] = React.useState(
+        infos
+    )
 
     const renderTabs = () => {
-        return tabs.map((tab, i) => {
+        return items.map((item, i) => {
             return (
                 <TouchableHighlight
                     key={i}
@@ -58,7 +53,7 @@ export default function Janelas() {
                                 activeTab === i ? styles.activeTabText : null,
                             ]}
                         >
-                            {tab}
+                            {item.name}
                         </Text>
                     </View>
                 </TouchableHighlight>
@@ -68,43 +63,41 @@ export default function Janelas() {
 
     const renderContent = () => {
         return (
-
             <ScrollView>
+                <View>
                     <View style={styles.flexRow}>
-                        <Text>
-                            Dorme entre:
+                        <Text style={styles.textTitleInfo}>
+                            Janela:
                         </Text>
-                        <Text>2-3</Text>
+                        <Text style={styles.textInfo2}> {items[activeTab].janela_sono}</Text>
                     </View>
 
                     <View style={styles.flexRow}>
 
-                        <Text>
+                        <Text style={styles.textTitleInfo}>
                             Quantidade de sonecas por dia:
                         </Text>
-                        <Text>2</Text>
+                        <Text style={styles.textInfo2}> {items[activeTab].quantidade_sonecas}</Text>
                     </View>
 
                     <View style={styles.flexRow}>
 
-                        <Text>
+                        <Text style={styles.textTitleInfo}>
                             Tempo das sonecas:
                         </Text>
-                        <Text>2-3</Text>
+                        <Text style={styles.textInfo2}> {items[activeTab].tempo_sonecas}</Text>
                     </View>
 
                     <View style={styles.flexRow}>
 
-                        <Text>
+                        <Text style={styles.textTitleInfo}>
                             Tempo acordado entre sonecas:
                         </Text>
-                        <Text>2</Text>
+                        <Text style={styles.textInfo2}> {items[activeTab].tempo_acordado}</Text>
                     </View>
+                </View>
 
             </ScrollView>
-
-
-
         );
     };
 
@@ -114,7 +107,7 @@ export default function Janelas() {
             <StatusBar style="auto" />
             <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 40 }}>
                 <TouchableOpacity
-                 onPress={goBack}>
+                    onPress={goBack}>
                     <Entypo name="chevron-thin-left" size={20} color="#573205" />
                 </TouchableOpacity>
                 <Text style={styles.textTitle}>Janelas do Sono</Text>
@@ -127,19 +120,16 @@ export default function Janelas() {
             </View>
 
             <View
-            style={{backgroundColor: '#F4F3F3',
-            paddingHorizontal: 40}}>
-            <List.Section >
-                        <List.Accordion
-                            title="O que é?"
-                            style={styles.itemAcordion}
-                            onPress={handlePress}>
-                            <Text style={styles.textInfo}>Refere-se ao período de tempo durante o qual um bebê está pronto para dormir, geralmente indicado por sinais de cansaço ou sonolência. É importante que os pais observem os sinais de cansaço e aprendam a identificar a janela de sono do bebê para ajudá-lo a dormir adequadamente. </Text>
-                        </List.Accordion>
-                    </List.Section>
+                style={{
+                    backgroundColor: '#F4F3F3',
+                    paddingHorizontal: 30
+                }}>
+                
+                <Text style={styles.textInfo}>Refere-se ao período de tempo durante o qual um bebê está pronto para dormir, geralmente indicado por sinais de cansaço ou sonolência. </Text>
+
             </View>
 
-            
+
 
             <ScrollView
                 horizontal={true}
@@ -174,7 +164,7 @@ const styles = StyleSheet.create({
     },
 
     icon: {
-        width: 318, height: 290, marginTop: 30
+        width: 300, height: 290, marginTop: 0
     }
     ,
     container2: {
@@ -213,8 +203,21 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
 
+    textTitleInfo: {
+        marginTop: 5,
+        fontSize: 17,
+        color: '#573205',
+        fontWeight: 'bold'
+    },
+
+    textInfo2: {
+        fontSize: 16,
+        marginTop: 5,
+        color: '#573205',
+    },
+
     itemAcordion: {
         backgroundColor: '#DDAE76',
-    },
+    }
 });
 

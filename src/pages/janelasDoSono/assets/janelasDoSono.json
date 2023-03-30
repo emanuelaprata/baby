@@ -1,0 +1,37 @@
+[
+    {
+    "name": "0-2 meses",
+    "janela_sono": "30-45 minutos",
+    "quantidade_sonecas": "Várias sonecas ao longo do dia e da noite",
+    "tempo_acordado": "45-60 minutos",
+    "tempo_sonecas": "30 minutos a 2 horas"
+    },
+    {
+    "name": "3-4 meses",
+    "janela_sono": "1,5-2 horas",
+    "quantidade_sonecas": "3-4 sonecas durante o dia e um sono noturno mais longo",
+    "tempo_acordado": "1-2 horas",
+    "tempo_sonecas": "30 minutos a 2 horas"
+    },
+    {
+    "name": "5-6 meses",
+    "janela_sono": "2-2,5 horas",
+    "quantidade_sonecas": "2-3 sonecas durante o dia e um sono noturno mais longo",
+    "tempo_acordado": "2-3 horas",
+    "tempo_sonecas": "30 minutos a 2 horas"
+    },
+    {
+    "name": "7-9 meses",
+    "janela_sono": "2,5-3 horas",
+    "quantidade_sonecas": "2 sonecas durante o dia e um sono noturno mais longo",
+    "tempo_acordado": "2,5-4 horas",
+    "tempo_sonecas": "45 minutos a 2 horas"
+    },
+    {
+    "name": "10-12 meses",
+    "janela_sono": "3-4 horas",
+    "quantidade_sonecas": "2 sonecas durante o dia e um sono noturno mais longo",
+    "tempo_acordado": "3-4 horas",
+    "tempo_sonecas": "1-2 horas"
+    }
+    ]

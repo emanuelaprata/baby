@@ -1,0 +1,34 @@
+ [
+      {
+        "numero": "1° pico",
+        "idade": "7-10 dias",
+        "descricao": "Pico de crescimento do recém-nascido, que pode aumentar a necessidade de alimentação e afetar o sono do bebê."
+      },
+      {
+        "numero": "2° pico",
+        "idade": "2-3 semanas",
+        "descricao": "Outro pico de crescimento do recém-nascido, que pode fazer com que o bebê fique mais faminto, inquieto e choroso."
+      },
+      {
+        "numero": "3° pico",
+        "idade": "6 semanas",
+        "descricao": "Pico de crescimento que pode afetar o sono do bebê, tornando-o mais inquieto e exigindo mais atenção."
+      },
+      {
+        "numero": "4° pico",
+        "idade": "3 meses",
+        "descricao": "Pico de crescimento que pode levar a um aumento na fome e na necessidade de alimentação, além de afetar o padrão de sono do bebê."
+      },
+      {
+        "numero": "5° pico",
+        "idade": "4 meses",
+        "descricao": "Pico de crescimento que pode estar associado ao desenvolvimento motor, cognitivo e social do bebê, levando a mudanças no comportamento e no sono."
+      },
+      {
+        "numero": "6° pico",
+        "idade": "6 meses",
+        "descricao": "Pico de crescimento que pode estar relacionado à introdução de alimentos sólidos na dieta do bebê, além de afetar o sono e a rotina de alimentação."
+      }
+    ]
+  
+  

@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { useNavigation } from '@react-navigation/native'
-import { StyleSheet, Text, View, Image, TouchableOpacity, TouchableHighlight, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, TouchableHighlight, ScrollView, Alert } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import { List } from 'react-native-paper';
 
@@ -12,7 +12,7 @@ import calendario from './assets/calendario.json'
 export default function Calendario() {
 
     const navigation = useNavigation();
-    
+
     function goBack() {
         navigation.goBack()
     }
@@ -53,47 +53,49 @@ export default function Calendario() {
                         >
                             {item.name}
 
-                          
+
                         </Text>
                     </View>
                 </TouchableHighlight>
             );
         })
-        
     };
 
     const renderContent = () => {
-        return(
+        return (
+            <ScrollView>
             <View>
                 {items[activeTab].vacinas.map((item, i) => {
-            return (
-                <List.Section
-                style={{ marginBottom: 10}}>
-                <List.Accordion
-                    title={item.name}
-                    style={styles.acordion}
-                    onPress={handlePressContent}>
-                    <Text style={styles.textInfo}>{item.illness}</Text>
-                    <Text>Via de administração:</Text>
-                    <Text style={styles.textInfo}>{item.via}</Text>
-                </List.Accordion>
-            </List.Section>
-            )
-        })}
+                    return (
+                        <List.Section
+                            style={{ marginBottom: 10 }}>
+                            <List.Accordion
+                                title={item.name}
+                                style={styles.acordion}
+                                onPress={handlePressContent}>
+                                <Text style={styles.textInfo}>{item.illness}</Text>
+                            </List.Accordion>
+                        </List.Section>
+                    )
+                })}
             </View>
+            </ScrollView>
         )
     };
 
-    
+
 
     return (
         <View styles={styles.container}>
+
             <StatusBar style="auto" />
-            <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 40 }}>
+
+            <View style={{ flexDirection: 'row', alignItems: 'center', paddingTop: 30, paddingBottom: 10}}>
                 <TouchableOpacity
-                onPress={goBack}
+                    onPress={goBack}
+                    style={{marginLeft: 10}}
                 >
-                    <Entypo name="chevron-thin-left" size={20} color="#573205" />
+                    <Entypo name="chevron-thin-left" size={15} color="black" />
                 </TouchableOpacity>
                 <Text style={styles.textTitle}>Calendário Vacinal</Text>
             </View>
@@ -106,20 +108,19 @@ export default function Calendario() {
                     style={{ paddingTop: 10 }}>
                     {renderTabs()}
                 </ScrollView>
-            </View>
+            </View> 
 
+            <View style={{justifyContent: 'center', alignItems: 'center'}}>
+            <Image source={require('./assets/icon.png')}
+                    style={styles.icon} />
+            </View>
+           
             <View style={{ alignItems: 'center' }}>
-                    <Image source={require('./assets/icon.png')}
-                        style={styles.icon} />
-                </View>
+
+            </View>
 
             <ScrollView>
-                               <View>
-                               <View
-            style={{
-            paddingHorizontal: 40}}>
-            
-            </View>
+                <View>
                     {renderContent()}
                 </View>
             </ScrollView>
@@ -130,6 +131,7 @@ export default function Calendario() {
 const styles = StyleSheet.create({
     container: {
         width: '100%', height: '100%'
+
     },
 
     flexRow: {
@@ -137,11 +139,11 @@ const styles = StyleSheet.create({
     },
 
     textTitle: {
-        fontSize: 25, color: '#573205', textAlign: 'center', flexGrow: 1
+        fontSize: 20, marginLeft: 20
     },
 
     icon: {
-        width: 318, height: 290
+        width: 230, height: 200, marginVertical: 20
     }
     ,
     container2: {
@@ -150,15 +152,14 @@ const styles = StyleSheet.create({
     tabContainer: {
         flexDirection: "row",
         justifyContent: "space-between",
-        paddingHorizontal: 10,
     },
     tab: {
-        margin: 10,
+        marginHorizontal: 10,
         alignItems: 'center'
     },
     activeTab: {
-        borderColor: '#CF8B3B',
-        borderBottomWidth: 2
+        borderColor: '#46DEDE',
+        borderBottomWidth: 0
     },
     tabText: {
         fontSize: 20,
@@ -174,11 +175,22 @@ const styles = StyleSheet.create({
     },
 
     acordion: {
-        backgroundColor: '#E2FFCC',
-        borderRadius: 10,
+        backgroundColor: '#EDCB9C',
         height: 50,
-        marginLeft: '10%',
-        marginRight: '10%',
+    },
+    textInfoTitle: {
+        fontSize: 15,
+        width: '100%',
+        fontWeight: 'bold',
+        marginTop: 5,
+        flexWrap: 1
+    },
+
+    textInfo: {
+        fontSize: 15,
+        width: '100%',
+        textAlign: 'center',
+        padding: 10
     },
 });
 

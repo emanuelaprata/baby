@@ -1,11 +1,17 @@
 import React from 'react';
+import { Alert } from 'react-native';
 import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
+import { Octicons } from '@expo/vector-icons';
 import { List } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native'
 
+import infos from './assets/picos.json'
+
 
 export default function PicoCrescimento() {
+
+    
 
     const navigation = useNavigation();
 
@@ -18,16 +24,10 @@ export default function PicoCrescimento() {
     const handlePress = () => setExpanded(!expanded);
 
     const [picos, setPicos] = React.useState(
-        [
-            { title: '1° Salto', time: '7 - 10 dias' },
-            { title: '2° Salto', time: '2 - 3 semanas' },
-            { title: '3° Salto', time: '4 - 6 semanas' },
-            { title: '4° Salto', time: '3 meses' },
-            { title: '5° Salto', time: '4 meses' },
-            { title: '6° Salto', time: '6 meses' },
-        ]
+        
+           infos
+        
     )
-
 
 
     return (
@@ -73,29 +73,73 @@ export default function PicoCrescimento() {
                     <View style={styles.flexRow}>
 
                         {picos.map((item, i) => {
+                            
                             return (
-                                <View style={styles.card}>
+                                <TouchableOpacity style={styles.card} onPress={() => {
+                                    Alert.alert(
+                                        'Sobre o ' + item.numero + ':',
+                                        item.descricao,
+                                        [
+                                            { text: 'Continuar', onPress: () => console.log('Botão 1 pressionado') },
+                                          ],
+                                        { cancelable: false }
+                                    )
+                                }}>
+                                
+                                
+                                <View >
                                 <Image source={require('./assets/cresc.png')}
                                     style={{
                                         width: 50, height: 50
                                     }} />
                                 <View>
-                                    <Text style={styles.textInfoTitle}>{item.title}</Text>
-                                    <Text style={styles.textInfo}>{item.time}</Text>
+                                    <Text style={styles.textInfoTitle}>{item.numero}</Text>
+                                    <Text style={styles.textInfo}>{item.idade}</Text>
                                 </View>
                             </View>
+                            </TouchableOpacity>
                             )
                         })}
                     </View>
 
-                    <View style={{
+                    <TouchableOpacity
+                     style={{
                         backgroundColor: '#E4F2EF',
                         height: 110,
                         borderRadius: 20,
                         alignItems: 'center',
                         margin: '2%',
                         justifyContent: 'center'
-                    }}>
+                    }}
+                    onPress={() => {
+                                    Alert.alert(
+                                        'Sobre o 9° pico:',
+                                        'Pico de crescimento que pode ser associado ao desenvolvimento da mobilidade, incluindo o início do engatinhar ou andar, além de afetar o sono e o apetite do bebê.',
+                                        [
+                                            { text: 'Continuar', onPress: () => console.log('Botão 1 pressionado') },
+                                          ],
+                                          {
+                                            cancelable: false,
+                                            containerStyle: {
+                                                borderRadius: 10,
+                                                backgroundColor: "#fff",
+                                                borderWidth: 1,
+                                                borderColor: "#ccc",
+                                                shadowColor: "#000",
+                                                shadowOffset: {
+                                                    width: 0,
+                                                    height: 2,
+                                                },
+                                                shadowOpacity: 0.25,
+                                                shadowRadius: 3.84,
+                                                elevation: 5,
+                                            },
+                                            
+                                          }
+                                    )
+                                }}> 
+                    <View>
+                        
                         <Image source={require('./assets/cresc.png')}
                             style={{
                                 width: 50, height: 50
@@ -105,6 +149,7 @@ export default function PicoCrescimento() {
                             <Text style={styles.textInfo}>9 meses</Text>
                         </View>
                     </View>
+                    </TouchableOpacity>
 
                 </View>
             </ScrollView>

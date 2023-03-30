@@ -3,12 +3,12 @@
         "name": "Ao nascer",
         "vacinas": [
             {
-                "name": "BCG",
+                "name": "BCG - Dose única",
                 "illness": "Protege contra a tuberculose.",
                 "via": "Intradérmica, no braço direito."
             },
             {
-                "name": "Hepatite B",
+                "name": "Hepatite B - Dose única",
                 "illness": "Protege contra a hepatite B.",
                 "via": "Intramuscular profunda"
             }
