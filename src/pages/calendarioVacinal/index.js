@@ -5,6 +5,8 @@ import { useNavigation } from '@react-navigation/native'
 import { StyleSheet, Text, View, Image, TouchableOpacity, TouchableHighlight, ScrollView, Alert } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import { List } from 'react-native-paper';
+import { ImageBackground } from 'react-native';
+import bgImage from './assets/back.png';
 
 import calendario from './assets/calendario.json'
 
@@ -64,11 +66,13 @@ export default function Calendario() {
     const renderContent = () => {
         return (
             <ScrollView>
-            <View>
+            <View style={{ height: '50%',
+        width: '100%',
+        padding: 30}}>
                 {items[activeTab].vacinas.map((item, i) => {
                     return (
                         <List.Section
-                            style={{ marginBottom: 10 }}>
+                            style={{ marginBottom: 10}}>
                             <List.Accordion
                                 title={item.name}
                                 style={styles.acordion}
@@ -86,6 +90,8 @@ export default function Calendario() {
 
 
     return (
+        <ImageBackground source={bgImage} style={styles.background}>
+
         <View styles={styles.container}>
 
             <StatusBar style="auto" />
@@ -95,7 +101,7 @@ export default function Calendario() {
                     onPress={goBack}
                     style={{marginLeft: 10}}
                 >
-                    <Entypo name="chevron-thin-left" size={15} color="black" />
+                    <Entypo name="chevron-thin-left" size={15} />
                 </TouchableOpacity>
                 <Text style={styles.textTitle}>Calendário Vacinal</Text>
             </View>
@@ -125,10 +131,18 @@ export default function Calendario() {
                 </View>
             </ScrollView>
         </View>
+        </ImageBackground>
+
     )
 }
 
 const styles = StyleSheet.create({
+    background: {
+        flex: 1,
+        resizeMode: 'cover',
+        width: '100%',
+        height: '100%',
+      },
     container: {
         width: '100%', height: '100%'
 
@@ -139,8 +153,9 @@ const styles = StyleSheet.create({
     },
 
     textTitle: {
-        fontSize: 20, marginLeft: 20
+        fontSize: 20, marginStart: 15
     },
+
 
     icon: {
         width: 230, height: 200, marginVertical: 20
@@ -177,6 +192,7 @@ const styles = StyleSheet.create({
     acordion: {
         backgroundColor: '#EDCB9C',
         height: 50,
+        paddingHorizontal: 30,
     },
     textInfoTitle: {
         fontSize: 15,

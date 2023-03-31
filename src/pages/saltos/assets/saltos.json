@@ -1,73 +1,52 @@
 [
     {
-        "name": "1° Salto",
-        "time": "5 semanas",
-        "image": "https://cdn-icons-png.flaticon.com/512/7966/7966498.png",
-        "details": "A visão da criança melhora e ela já consegue acompanhar movimentos e objetos brevemente com os olhos, fixar o olhar por algum tempo.. Ele pode ficar mais tempo acordado, mamar mais e a querer bastante colo. O bebê pode começar a chorar com lágrimas e sorrir.",
-        "sinais": []
+        "salto": "1° salto",
+        "idade": "5 semanas (1 mês)",
+        "desenvolvimento": "A visão da criança melhora e ela já consegue acompanhar movimentos e objetos brevemente com os olhos, fixar o olhar por algum tempo. Ele pode ficar mais tempo acordado, mamar mais e a querer bastante colo. O bebê pode começar a chorar com lágrimas e sorrir."
     },
     {
-        "name":"2° Salto",
-        "time": "5 semanas",
-        "image": "https://images.pexels.com/photos/161709/newborn-baby-feet-basket-161709.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "details": "A visão da criança melhora e ela já consegue acompanhar movimentos e objetos brevemente com os olhos, fixar o olhar por algum tempo.. Ele pode ficar mais tempo acordado, mamar mais e a querer bastante colo. O bebê pode começar a chorar com lágrimas e sorrir.",
-        "sinais": []
-        
-    } ,
+        "salto":"2° salto",
+        "idade": "8 semanas (quase 2 meses)",
+        "desenvolvimento": "O bebê começa a perceber seus pés e mãos. Também passa a notar diferenças nos sons, cheiros e sabores. O pescocinho da criança também já está um pouco mais firme – aos poucos, você vai ver que ele consegue erguer a cabeça e deixá-la em pé."
+    },
+     {
+        "salto":"3° salto",
+        "idade": "12 semanas (quase 3 meses)",
+        "desenvolvimento": "A visão melhora e a criança já consegue perceber todo cômodo em que está. Ela se vira com sons altos e pode descobrir seus próprios sons, como pequenos gritinhos e vai conseguir acompanhar o objeto com os olhos e com a cabeça."
+    },
     {
-        "name":"3° Salto",
-        "time": "5 semanas",
-        "image": "https://cdn-icons-png.flaticon.com/512/7966/7966498.png",
-        "details": "A visão da criança melhora e ela já consegue acompanhar movimentos e objetos brevemente com os olhos, fixar o olhar por algum tempo.. Ele pode ficar mais tempo acordado, mamar mais e a querer bastante colo. O bebê pode começar a chorar com lágrimas e sorrir.",
-        "sinais": []
-    } ,
+        "salto": "4° salto",
+        "idade": "19 semanas (4 meses e meio)",
+        "desenvolvimento": "Um dos saltos mais longos, que pode durar até 4 ou 6 semanas! A criança fica bem impaciente e demanda muito colo e atenção. Aqui ela aprende a segurar e mexer pequenos brinquedos ou objetos, além de começar a levar as coisas à boca."
+    },
     {
-        "name":"4° Salto",
-        "time": "4 meses e meio",
-        "image": "https://cdn-icons-png.flaticon.com/512/7966/7966498.png",
-        "details": "A visão da criança melhora e ela já consegue acompanhar movimentos e objetos brevemente com os olhos, fixar o olhar por algum tempo.. Ele pode ficar mais tempo acordado, mamar mais e a querer bastante colo. O bebê pode começar a chorar com lágrimas e sorrir.",
-        "sinais": []
-    } ,
+        "salto":"5° salto",
+        "idade": "26 semanas (6 meses)",
+        "desenvolvimento": "O bebê pode sentar sem apoio e descobrir suas habilidades ao brincar (como colocar objetos um dentro do outro, coisas no topo, embaixo, etc)."
+    },
     {
-        "name":"5° Salto",
-        "time": "6 meses",
-        "image": "https://cdn-icons-png.flaticon.com/512/7966/7966498.png",
-        "details": "A visão da criança melhora e ela já consegue acompanhar movimentos e objetos brevemente com os olhos, fixar o olhar por algum tempo.. Ele pode ficar mais tempo acordado, mamar mais e a querer bastante colo. O bebê pode começar a chorar com lágrimas e sorrir.",
-        "sinais": []
-    } ,
-    {
-        "name":"6° Salto",
-        "time": "7 meses",
-        "image": "https://cdn-icons-png.flaticon.com/512/7966/7966498.png",
-        "details": "A visão da criança melhora e ela já consegue acompanhar movimentos e objetos brevemente com os olhos, fixar o olhar por algum tempo.. Ele pode ficar mais tempo acordado, mamar mais e a querer bastante colo. O bebê pode começar a chorar com lágrimas e sorrir.",
-        "sinais": []
-    } ,
-    {
-        "name":"7° Salto",
-        "time": "8 meses",
-        "image": "https://cdn-icons-png.flaticon.com/512/7966/7966498.png",
-        "details": "A visão da criança melhora e ela já consegue acompanhar movimentos e objetos brevemente com os olhos, fixar o olhar por algum tempo.. Ele pode ficar mais tempo acordado, mamar mais e a querer bastante colo. O bebê pode começar a chorar com lágrimas e sorrir.",
-        "sinais": []
-    } ,
-    {
-        "name":"8° Salto",
-        "time": "10/11 meses",
-        "image": "https://cdn-icons-png.flaticon.com/512/7966/7966498.png",
-        "details": "A visão da criança melhora e ela já consegue acompanhar movimentos e objetos brevemente com os olhos, fixar o olhar por algum tempo.. Ele pode ficar mais tempo acordado, mamar mais e a querer bastante colo. O bebê pode começar a chorar com lágrimas e sorrir.",
-        "sinais": []
-    } ,
-    {
-        "name":"9° Salto",
-        "time": "1 ano e 1 meses",
-        "image": "https://cdn-icons-png.flaticon.com/512/7966/7966498.png",
-        "details": "A visão da criança melhora e ela já consegue acompanhar movimentos e objetos brevemente com os olhos, fixar o olhar por algum tempo.. Ele pode ficar mais tempo acordado, mamar mais e a querer bastante colo. O bebê pode começar a chorar com lágrimas e sorrir.",
-        "sinais": []
-    } ,
-    {
-        "name":"10° Salto",
-        "time": "1 ano e 3 meses",
-        "image": "https://cdn-icons-png.flaticon.com/512/7966/7966498.png",
-        "details": "A visão da criança melhora e ela já consegue acompanhar movimentos e objetos brevemente com os olhos, fixar o olhar por algum tempo.. Ele pode ficar mais tempo acordado, mamar mais e a querer bastante colo. O bebê pode começar a chorar com lágrimas e sorrir.",
-        "sinais": []
+        "salto": "6° salto",
+        "idade": "30 semanas (7 meses)",
+        "desenvolvimento": "A criança passa a explorar mais os ambientes e quer mexer nas coisas ao seu redor! Aqui é importante ter a casa segura, com protetores e travas que vão manter o bebê longe do que não é adequado para a sua idade."
+    },
+     {
+        "salto":"7° salto",
+        "idade": "37 semanas (8 meses)",
+        "desenvolvimento": "O bebê começa a mostrar a sua personalidade e protesta quando não recebe o que quer (seja um brinquedo ou colo, por exemplo). A fase é bem difícil e pode ser marcada também pela ansiedade de separação. A criança pode falar algumas sílabas, como “papá”, “mamá”, etc."
+    },
+     {
+        "salto":"8° salto",
+        "idade": "46 semanas (quase 11 meses)",
+        "desenvolvimento": "Seu filho vai começar a observar e reproduzir as interações que ocorrem ao seu redor, como colocar a chave na porta, o telefone no ouvido, procurar algo escondido."
+    },
+     {
+        "salto": "9° salto",
+        "idade": "1 ano e 1 mês",
+        "desenvolvimento": "A criança começa a andar, o que é uma grande conquista! Ela também pode começar a falar suas primeiras palavras e ter um vocabulário de até 10 palavras. A criança começa a se interessar mais pelos brinquedos que envolvem movimento, como carrinhos e bola."
+    },
+     {
+        "salto":"10° salto",
+        "idade": "1 ano e 3 meses",
+        "desenvolvimento": "Aqui a criança começa a se interessar por imitar as atividades dos adultos, como usar escovas de cabelo, colocar comida em pratos, entre outras coisas. A fala começa a se desenvolver e a criança pode já formar frases simples. Ela também pode começar a mostrar preferência por determinados brinquedos e atividades."
     } 
 ]

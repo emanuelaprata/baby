@@ -102,12 +102,13 @@ export default function Desenvolvimento() {
     return (
         <View styles={styles.container}>
             <StatusBar style="auto" />
-            <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 40 }}>
+            <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 30 }}>
                 <TouchableOpacity
-                    onPress={goBack}
-                >
-                    <Entypo name="chevron-thin-left" size={20} color="#573205" />
+                style={{marginLeft: 10}}
+                    onPress={goBack}>
+                    <Entypo name="chevron-thin-left" size={15}  />
                 </TouchableOpacity>
+
                 <Text style={styles.textTitle}>Desenvolvimento</Text>
             </View>
 
@@ -146,7 +147,7 @@ const styles = StyleSheet.create({
     },
 
     textTitle: {
-        fontSize: 25, color: '#573205', textAlign: 'center', flexGrow: 1
+        fontSize: 20, marginStart: 15
     },
 
     icon: {

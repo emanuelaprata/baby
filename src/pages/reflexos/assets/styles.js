@@ -9,13 +9,9 @@ export default StyleSheet.create({
     },
     
     
-      container: {
-        display: 'flex',
-        width: '100%',
-        height: '100%',
-        backgroundColor: '#EBEAEA',
-        alignItems: 'center',
-      },
+    container: {
+      width: '100%', height: '100%', backgroundColor: '#EBEAEA'
+  },
     
        containerOptions: {
         width: '100%',
@@ -66,13 +62,13 @@ export default StyleSheet.create({
       image: {
         width: '100%',
         height: 200,
-        borderTopLeftRadius: 20,
-        borderTopRightRadius: 20
+        borderTopLeftRadius: 10,
+        borderTopRightRadius: 10,
       },
     
     
       itemAcordion: {
-        backgroundColor: '#E4C299',
+        backgroundColor: '#DDAE76',
         shadowColor: '#blaCK',
         shadowOffset: {
           width: 0,
@@ -81,5 +77,8 @@ export default StyleSheet.create({
         shadowRadius: 5,
         shadowOpacity: 1.0,
         elevation: 3,
-      }
+      },
+      textTitle: {
+        fontSize: 20, marginStart: 15
+    }
 })

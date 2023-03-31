@@ -1,6 +1,7 @@
 import React from 'react';
+import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TouchableOpacity, ImageBackground, ScrollView } from 'react-native';
-import { Octicons, Feather, AntDesign, Entypo } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
 import competencias from './assets/competencias.json'
 import { useState } from 'react';
 import { useNavigation } from '@react-navigation/native'
@@ -19,15 +20,15 @@ export default function Competencias() {
 
     return (
         <View style={styles.container}>
-
-            <View style={styles.flexRow}>
-                <TouchableOpacity style={{ marginLeft: 20 }}
-                onPress={goBack}
-                >
-                    <Entypo name="chevron-thin-left" size={20} color="#573205" />
+  <StatusBar style="auto" />
+            <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 30 }}>
+                <TouchableOpacity
+                style={{marginLeft: 10}}
+                    onPress={goBack}>
+                    <Entypo name="chevron-thin-left" size={15}  />
                 </TouchableOpacity>
-                <Text style={styles.fontTitle}>Promovendo Competência</Text>
 
+                <Text style={styles.textTitle}>Promovendo Competências</Text>
             </View>
 
 
@@ -84,21 +85,18 @@ const styles = StyleSheet.create({
 
 
     container: {
-        display: 'flex',
-        width: '100%',
-        height: '100%',
-        backgroundColor: '#EBEAEA',
-        alignItems: 'center',
+        width: '100%', height: '100%', backgroundColor: '#EBEAEA'
     },
 
-    fontTitle: { fontSize: 25, color: '#573205', marginTop: 90, textAlign: 'center', flexGrow: 1 },
-
+    textTitle: {
+        fontSize: 20, marginStart: 15
+    },
     scroll: { backgroundColor: '#EBEAEA', width: '100%' },
 
     icon: {
         width: 350, height: 230 },
 
-    containerInfo: { width: '100%', backgroundColor: '#EBEAEA', paddingTop: 20, borderRadius: 20 },
+    containerInfo: { width: '100%', paddingTop: 20, borderRadius: 20 },
 
     textInfo: { fontSize: 16, textAlign: 'center', margin: 10, color: '#573205' },
 

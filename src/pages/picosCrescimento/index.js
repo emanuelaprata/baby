@@ -1,10 +1,12 @@
 import React from 'react';
 import { Alert } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
-import { Octicons } from '@expo/vector-icons';
 import { List } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native'
+import { ImageBackground } from 'react-native';
+import bgImage from './assets/back.png';
 
 import infos from './assets/picos.json'
 
@@ -31,15 +33,18 @@ export default function PicoCrescimento() {
 
 
     return (
-        <View style={styles.container}>
+        <ImageBackground source={bgImage} style={styles.background}>
 
-            <View style={styles.flexRow}>
-                <TouchableOpacity style={{ marginLeft: 10 }}
-                    onPress={goBack}
-                >
-                    <Entypo name="chevron-thin-left" size={18} color="black" />
+        <View style={styles.container}>
+        <StatusBar style="auto" />
+            <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 30 }}>
+                <TouchableOpacity
+                style={{marginLeft: 10}}
+                    onPress={goBack}>
+                    <Entypo name="chevron-thin-left" size={15}  />
                 </TouchableOpacity>
-                <Text style={styles.textHeader}>Picos de Crescimento</Text>
+
+                <Text style={styles.textTitle}>Picos de crescimento</Text>
             </View>
 
 
@@ -80,7 +85,7 @@ export default function PicoCrescimento() {
                                         'Sobre o ' + item.numero + ':',
                                         item.descricao,
                                         [
-                                            { text: 'Continuar', onPress: () => console.log('Botão 1 pressionado') },
+                                            { text: 'Ok'},
                                           ],
                                         { cancelable: false }
                                     )
@@ -116,7 +121,7 @@ export default function PicoCrescimento() {
                                         'Sobre o 9° pico:',
                                         'Pico de crescimento que pode ser associado ao desenvolvimento da mobilidade, incluindo o início do engatinhar ou andar, além de afetar o sono e o apetite do bebê.',
                                         [
-                                            { text: 'Continuar', onPress: () => console.log('Botão 1 pressionado') },
+                                            { text: 'Ok', onPress: () => console.log('Botão 1 pressionado') },
                                           ],
                                           {
                                             cancelable: false,
@@ -156,18 +161,25 @@ export default function PicoCrescimento() {
 
 
         </View >
+        </ImageBackground>
     );
 }
 
 const styles = StyleSheet.create(
     {
-        container: {
-            display: 'flex',
+        background: {
+            flex: 1,
+            resizeMode: 'cover',
             width: '100%',
             height: '100%',
-            backgroundColor: 'white',
-            alignItems: 'center',
-            justifyContent: 'center'
+          },
+
+        container: {
+            width: '100%', height: '100%'
+        },
+
+        textTitle: {
+            fontSize: 20, marginStart: 15
         },
 
         flexRow: {
@@ -181,13 +193,11 @@ const styles = StyleSheet.create(
 
         containerInfos: {
             width: '100%',
-            backgroundColor: 'white',
             paddingHorizontal: 30
         },
 
         itemAcordion: {
-            backgroundColor: '#E3CCAA',
-            borderRadius: 10,
+            backgroundColor: '#DDAE76',
             height: 50,
 
         },

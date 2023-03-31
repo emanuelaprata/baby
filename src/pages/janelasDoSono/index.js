@@ -5,6 +5,8 @@ import { useNavigation } from '@react-navigation/native'
 import { StyleSheet, Text, View, Image, TouchableOpacity, TouchableHighlight, ScrollView } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import infos from './assets/janelasDoSono.json'
+import { ImageBackground } from 'react-native';
+import bgImage from './assets/back.png';
 
 export default function Janelas() {
 
@@ -103,13 +105,18 @@ export default function Janelas() {
 
 
     return (
+        <ImageBackground source={bgImage} style={styles.background}>
+
+        
         <View styles={styles.container}>
             <StatusBar style="auto" />
-            <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 40 }}>
+            <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 30 }}>
                 <TouchableOpacity
+                style={{marginLeft: 10}}
                     onPress={goBack}>
-                    <Entypo name="chevron-thin-left" size={20} color="#573205" />
+                    <Entypo name="chevron-thin-left" size={15}  />
                 </TouchableOpacity>
+
                 <Text style={styles.textTitle}>Janelas do Sono</Text>
             </View>
 
@@ -121,7 +128,6 @@ export default function Janelas() {
 
             <View
                 style={{
-                    backgroundColor: '#F4F3F3',
                     paddingHorizontal: 30
                 }}>
                 
@@ -147,10 +153,17 @@ export default function Janelas() {
                 {renderContent()}
             </ScrollView>
         </View>
+        </ImageBackground>
     )
 }
 
 const styles = StyleSheet.create({
+    background: {
+        flex: 1,
+        resizeMode: 'cover',
+        width: '100%',
+        height: '100%',
+      },
     container: {
         width: '100%', height: '100%'
     },
@@ -160,7 +173,7 @@ const styles = StyleSheet.create({
     },
 
     textTitle: {
-        fontSize: 25, color: '#573205', textAlign: 'center', flexGrow: 1
+        fontSize: 20, marginStart: 15
     },
 
     icon: {
@@ -198,7 +211,6 @@ const styles = StyleSheet.create({
     textInfo: {
         fontSize: 15,
         marginTop: 10,
-        color: '#573205',
         width: '100%',
         textAlign: 'center'
     },
@@ -206,18 +218,15 @@ const styles = StyleSheet.create({
     textTitleInfo: {
         marginTop: 5,
         fontSize: 17,
-        color: '#573205',
         fontWeight: 'bold'
     },
 
     textInfo2: {
         fontSize: 16,
         marginTop: 5,
-        color: '#573205',
+    
     },
 
-    itemAcordion: {
-        backgroundColor: '#DDAE76',
-    }
+
 });
 
