@@ -6,7 +6,8 @@ import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { useNavigation } from '@react-navigation/native'
 import styles from './assets/styles'
-
+import { ImageBackground } from 'react-native';
+import bgImage from './assets/back.png';
 import reflexos from './assets/reflexos.json'
 
 export default function Reflexos() {
@@ -26,6 +27,10 @@ export default function Reflexos() {
   )
 
   return (
+    <ImageBackground source={bgImage} style={{ flex: 1,
+      resizeMode: 'cover',
+      width: '100%',
+      height: '100%'}}>
     <View style={styles.container}>
 
       <StatusBar style="auto" />
@@ -86,6 +91,7 @@ export default function Reflexos() {
       </ScrollView>
 
     </View >
+    </ImageBackground>
   );
 }
 

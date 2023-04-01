@@ -3,7 +3,6 @@ import { Alert } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { Entypo, AntDesign } from '@expo/vector-icons';
-import { List } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native'
 import { ImageBackground } from 'react-native';
 import bgImage from './assets/back.png';
@@ -47,29 +46,32 @@ export default function Saltos() {
 
             <ScrollView style={{ width: '100%' }}>
                 <View style={styles.containerInfos}>
-                    <Image source={require('./assets/icon.png')}
+                    {/* <Image source={require('./assets/icon.png')}
                         style={{
                             width: 300, height: 170
-                        }} />
-                    <List.Section >
+                        }} /> */}
+                    {/* <List.Section >
                         <List.Accordion
                             title="O que é?"
                             style={styles.itemAcordion}
                             onPress={handlePress}>
                             <Text style={styles.textInfo}>Os saltos de desenvolvimento estão relacionados com novas habilidades que o bebê conquista.</Text>
                         </List.Accordion>
-                    </List.Section>
+                    </List.Section> */}
 
+                        <Text style={{ fontSize: 15, textAlign: 'center', marginTop: 30, marginBottom: 15 }}>
+                        Os saltos de desenvolvimento estão relacionados com novas habilidades que o bebê conquista. Quando isso ocorre, o bebê experimenta muitas sensações e emoções novas, o que pode acabar alterando a rotina, alterando o sono o deixando agitado, relutante para suas sonecas e irritado ao fim do dia, ele pode ficar mais choroso, mais carente. Nesse momento o bebê precisa de muito carinho, atenção e contato físico, para que ele se sinta seguro e amparado.
+                        </Text>
 
-                    <List.Section
-                        style={{ marginBottom: 30 }}>
-                        <List.Accordion
-                            title="Como identificar"
-                            style={styles.itemAcordion}
-                            onPress={handlePress}>
-                            <Text style={styles.textInfo}>Quando isso ocorre, o bebê experimenta muitas sensações e emoções novas, o que pode acabar alterando a rotina, alterando o sono o deixando agitado, relutante para suas sonecas e irritado ao fim do dia, ele pode ficar mais choroso, mais carente. Nesse momento o bebê precisa de muito carinho, atenção e contato físico, para que ela se sinta segura e amparada.</Text>
-                        </List.Accordion>
-                    </List.Section>
+                    {/* <List.Section
+                    //     style={{ marginBottom: 30 }}>
+                    //     <List.Accordion
+                    //         title="Como identificar"
+                    //         style={styles.itemAcordion}
+                    //         onPress={handlePress}>
+                    //         <Text style={styles.textInfo}>Quando isso ocorre, o bebê experimenta muitas sensações e emoções novas, o que pode acabar alterando a rotina, alterando o sono o deixando agitado, relutante para suas sonecas e irritado ao fim do dia, ele pode ficar mais choroso, mais carente. Nesse momento o bebê precisa de muito carinho, atenção e contato físico, para que ela se sinta segura e amparada.</Text>
+                    //     </List.Accordion>
+                    // </List.Section> */}
 
 
                     <View style={styles.flexRow}>
@@ -89,10 +91,8 @@ export default function Saltos() {
                                 }}>
                                 
                                 <AntDesign name="rocket1" size={34} color="black" />
-                                <View>
                                     <Text style={styles.textInfoTitle}>{item.salto}</Text>
                                     <Text style={styles.textInfo}>{item.idade}</Text>
-                                </View>
                             </TouchableOpacity>
                             )
                         })}
@@ -100,12 +100,21 @@ export default function Saltos() {
 
                     <TouchableOpacity
                      style={{
-                        backgroundColor: '#E4F2EF',
+                        backgroundColor: '#EED3BA',
                         height: 110,
                         borderRadius: 20,
                         alignItems: 'center',
                         margin: '2%',
-                        justifyContent: 'center'
+                        justifyContent: 'center',
+                        shadowColor: '#5C5C5C',
+                                textAlign: 'center',
+                                shadowOffset: {
+                                    width: 0,
+                                    height: 4
+                                },
+                                shadowRadius: 5,
+                                shadowOpacity: 1.0,
+                                elevation: 3
                     }}
                     onPress={() => {
                                     Alert.alert(
@@ -115,33 +124,15 @@ export default function Saltos() {
                                             { text: 'Ok'},
                                           ],
                                           {
-                                            cancelable: false,
-                                            containerStyle: {
-                                                borderRadius: 10,
-                                                backgroundColor: "#fff",
-                                                borderWidth: 1,
-                                                borderColor: "#ccc",
-                                                shadowColor: "#000",
-                                                shadowOffset: {
-                                                    width: 0,
-                                                    height: 2,
-                                                },
-                                                shadowOpacity: 0.25,
-                                                shadowRadius: 3.84,
-                                                elevation: 5,
+                                            cancelable: false
                                             },
                                             
-                                          }
+                                          
                                     )
                                 }}> 
-                    <View>
                     <AntDesign name="rocket1" size={34} color="black" />
-                       
-                        <View>
                             <Text style={styles.textInfoTitle}>11° Salto</Text>
                             <Text style={styles.textInfo}>1 ano e 6 meses</Text>
-                        </View>
-                    </View>
                     </TouchableOpacity>
 
                 </View>
@@ -184,18 +175,13 @@ const styles = StyleSheet.create(
             paddingHorizontal: 30
         },
 
-        itemAcordion: {
-            backgroundColor: '#DDAE76',
-            height: 50,
-
-        },
-
-        textInfoTitle: {
+              textInfoTitle: {
             fontSize: 15,
             color: '#573205',
             width: '100%',
             fontWeight: 'bold',
-            marginTop: 5
+            marginTop: 5,
+            textAlign: 'center'
         },
 
         textInfo: {
@@ -206,8 +192,8 @@ const styles = StyleSheet.create(
         },
 
         card: {
-            width: '46%',
-            backgroundColor: '#CFAF8F',
+            width: '45%',
+            backgroundColor: '#EED3BA',
             height: 110,
             borderRadius: 20,
             alignItems: 'center',
@@ -219,7 +205,6 @@ const styles = StyleSheet.create(
             width: 0,
             height: 4
         },
-        width: '45%',
         shadowRadius: 5,
         shadowOpacity: 1.0,
         elevation: 3

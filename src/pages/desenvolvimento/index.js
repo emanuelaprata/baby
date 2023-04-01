@@ -5,6 +5,9 @@ import { useNavigation } from '@react-navigation/native'
 import { StyleSheet, Text, View, Image, TouchableOpacity, TouchableHighlight, ScrollView } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 
+import { ImageBackground } from 'react-native';
+import bgImage from './assets/back.png';
+
 import infos from './assets/desenvolvimento.json'
 
 export default function Desenvolvimento() {
@@ -55,33 +58,38 @@ export default function Desenvolvimento() {
 
     const renderContent = () => {
         return (
+            <ScrollView>
             <View style={styles.content}>
-                <View
-                    style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', width: 300, height: 50, borderRadius: 50, backgroundColor: '#D5DEEB', justifyContent: 'center', textAlign: 'center', marginTop: 30 }}>
-                    <Text>Altura:</Text>
-                    <Text>{items[activeTab].height}</Text>
-                    <Text>Peso:</Text>
-                    <Text>{items[activeTab].weight}</Text>
+                <View style={{ width: '100%', height: 50, borderRadius: 10, backgroundColor: '#EED3BA', justifyContent: 'center', alignItems: 'center', marginTop: 30 }}>
+                    <View style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+                        <Text>Altura:</Text>
+                        <Text> {items[activeTab].height}</Text>
+                    </View>
+                    <View style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+                        <Text>Peso:</Text>
+                        <Text> {items[activeTab].weight}</Text>
+                    </View>
+
                 </View>
 
                 <Text
                     style={{
-                        margin:20, textAlign: 'auto', fontSize: 17
+                        margin: 20, textAlign: 'auto', fontSize: 17
                     }}
-                    >{items[activeTab].description}</Text>
-                    <View style={styles.flexRow}>
-                        <Image source={require('./assets/brinc.png')}
-                            style={styles.icon2} />
-                        <View>
-                            <Text>Sugestões de brincadeiras:</Text>
-                            <Text>{items[activeTab].joke}</Text>
-                        </View>
-
+                >{items[activeTab].description}</Text>
+                <View style={styles.flexRow}>
+                    <Image source={require('./assets/brinc.png')}
+                        style={styles.icon2} />
+                    <View>
+                        <Text>Sugestões de brincadeiras:</Text>
+                        <Text>{items[activeTab].joke}</Text>
                     </View>
 
+                </View>
 
-                   
-                    {/* <View style={styles.flexRow}>
+
+
+                {/* <View style={styles.flexRow}>
                         <Image source={require('./assets/favo.png')}
                             style={styles.icon2} />
                         <View>
@@ -91,8 +99,9 @@ export default function Desenvolvimento() {
 
                     </View> */}
 
-                    
+
             </View>
+            </ScrollView>
         );
     };
 
@@ -100,40 +109,35 @@ export default function Desenvolvimento() {
 
 
     return (
+        <ImageBackground source={bgImage} style={styles.background}>
         <View styles={styles.container}>
             <StatusBar style="auto" />
             <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 30 }}>
                 <TouchableOpacity
-                style={{marginLeft: 10}}
+                    style={{ marginLeft: 10 }}
                     onPress={goBack}>
-                    <Entypo name="chevron-thin-left" size={15}  />
+                    <Entypo name="chevron-thin-left" size={15} />
                 </TouchableOpacity>
-
                 <Text style={styles.textTitle}>Desenvolvimento</Text>
             </View>
 
 
-            <View style={styles.tabContainer}>
+            <View>
                 <ScrollView
                     horizontal={true}
                     horizontal showsHorizontalScrollIndicator={false}
                     style={{ paddingTop: 10 }}>
                     {renderTabs()}
+                </ScrollView>       
+            </View>
+
+            <View>
+                <ScrollView>
+                {renderContent()}                    
                 </ScrollView>
-            </View>
-
-            <View style={{ alignItems: 'center' }}>
-                <Image source={require('./assets/icon.png')}
-                    style={styles.icon} />
-                                        {renderContent()}
-
-            </View>
-            
-
-        <View>
-            
+                </View>
         </View>
-        </View>
+        </ImageBackground>
     )
 }
 
@@ -163,7 +167,6 @@ const styles = StyleSheet.create({
     },
     tabContainer: {
         flexDirection: "row",
-        justifyContent: "space-between",
         paddingHorizontal: 10,
     },
     tab: {

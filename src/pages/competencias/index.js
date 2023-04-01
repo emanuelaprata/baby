@@ -5,6 +5,7 @@ import { Entypo } from '@expo/vector-icons';
 import competencias from './assets/competencias.json'
 import { useState } from 'react';
 import { useNavigation } from '@react-navigation/native'
+import bgImage from './assets/back.png';
 
 export default function Competencias() {
 
@@ -19,6 +20,8 @@ export default function Competencias() {
     )
 
     return (
+        <ImageBackground source={bgImage} style={styles.background}>
+
         <View style={styles.container}>
   <StatusBar style="auto" />
             <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 30 }}>
@@ -35,11 +38,11 @@ export default function Competencias() {
             <ScrollView
                 style={styles.scroll}
             >
-                <View style={{ alignItems: 'center' }}>
+                {/* <View style={{ alignItems: 'center' }}>
                     <Image source={require('./assets/icon.png')}
                         style={styles.icon} />
 
-                </View>
+                </View> */}
                 <View style={styles.containerInfo} >
                     <Text style={styles.textInfo}>Descobertas feitas pelo inventário HOME e por estudos neurológicos e outras pesquisas sugerem
                         as seguintes diretrizes para promover o desenvolvimento cognitivo de bebês e crianças pequenas:</Text>
@@ -71,10 +74,17 @@ export default function Competencias() {
             </ScrollView>
 
         </View >
+        </ImageBackground>
     );
 }
 
 const styles = StyleSheet.create({
+    background: {
+        flex: 1,
+        resizeMode: 'cover',
+        width: '100%',
+        height: '100%',
+      },
 
     flexRow: {
         display: 'flex',
@@ -101,7 +111,7 @@ const styles = StyleSheet.create({
     textInfo: { fontSize: 16, textAlign: 'center', margin: 10, color: '#573205' },
 
     option: {
-        backgroundColor: '#DADCFF',
+        backgroundColor: '#EED3BA',
         width: '90%',
         marginTop: 5,
         marginBottom: 20,

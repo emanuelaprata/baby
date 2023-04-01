@@ -13,7 +13,7 @@ import infos from './assets/picos.json'
 
 export default function PicoCrescimento() {
 
-    
+
 
     const navigation = useNavigation();
 
@@ -26,45 +26,47 @@ export default function PicoCrescimento() {
     const handlePress = () => setExpanded(!expanded);
 
     const [picos, setPicos] = React.useState(
-        
-           infos
-        
+
+        infos
+
     )
 
 
     return (
         <ImageBackground source={bgImage} style={styles.background}>
 
-        <View style={styles.container}>
-        <StatusBar style="auto" />
-            <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 30 }}>
-                <TouchableOpacity
-                style={{marginLeft: 10}}
-                    onPress={goBack}>
-                    <Entypo name="chevron-thin-left" size={15}  />
-                </TouchableOpacity>
+            <View style={styles.container}>
+                <StatusBar style="auto" />
+                <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 30 }}>
+                    <TouchableOpacity
+                        style={{ marginLeft: 10 }}
+                        onPress={goBack}>
+                        <Entypo name="chevron-thin-left" size={15} />
+                    </TouchableOpacity>
 
-                <Text style={styles.textTitle}>Picos de crescimento</Text>
-            </View>
+                    <Text style={styles.textTitle}>Picos de crescimento</Text>
+                </View>
 
 
-            <ScrollView style={{ width: '100%' }}>
-                <View style={styles.containerInfos}>
-                    <Image source={require('./assets/picos.png')}
+                <ScrollView style={{ width: '100%' }}>
+                    <View style={styles.containerInfos}>
+                        {/* <Image source={require('./assets/picos.png')}
                         style={{
                             width: 300, height: 170
-                        }} />
-                    <List.Section >
+                        }} /> */}
+                        {/* <List.Section >
                         <List.Accordion
                             title="O que é?"
                             style={styles.itemAcordion}
                             onPress={handlePress}>
                             <Text style={styles.textInfo}>Diz respeito ao crescimento físico. O crescimento não é constante, ele ocorre de forma mais intensa em alguns períodos específicos que chamamos de picos.</Text>
                         </List.Accordion>
-                    </List.Section>
+                    </List.Section> */}
+
+                        <Text style={{ fontSize: 15, textAlign: 'center', marginTop: 30, marginBottom: 15 }}>O crescimento físico não é constante, ele ocorre de forma mais intensa em alguns períodos específicos que chamamos de picos. Podemos identificar com o aumento das mamadas que também podem influenciar no sono do bebê.</Text>
 
 
-                    <List.Section
+                        {/* <List.Section
                         style={{ marginBottom: 30 }}>
                         <List.Accordion
                             title="Como identificar"
@@ -72,95 +74,90 @@ export default function PicoCrescimento() {
                             onPress={handlePress}>
                             <Text style={styles.textInfo}>Com o aumento das mamadas que também podem influenciar no sono do bebê.</Text>
                         </List.Accordion>
-                    </List.Section>
+                    </List.Section> */}
 
 
-                    <View style={styles.flexRow}>
+                        <View style={styles.flexRow}>
 
-                        {picos.map((item, i) => {
-                            
-                            return (
-                                <TouchableOpacity style={styles.card} onPress={() => {
-                                    Alert.alert(
-                                        'Sobre o ' + item.numero + ':',
-                                        item.descricao,
-                                        [
-                                            { text: 'Ok'},
-                                          ],
-                                        { cancelable: false }
-                                    )
-                                }}>
-                                
-                                
-                                <View >
+                            {picos.map((item, i) => {
+
+                                return (
+                                    <TouchableOpacity style={styles.card} onPress={() => {
+                                        Alert.alert(
+                                            'Sobre o ' + item.numero + ':',
+                                            item.descricao,
+                                            [
+                                                { text: 'Ok' },
+                                            ],
+                                            { cancelable: false }
+                                        )
+                                    }}>
+
+
+                                        <View >
+                                            <Image source={require('./assets/cresc.png')}
+                                                style={{
+                                                    width: 50, height: 50
+                                                }} />
+                                            <View>
+                                                <Text style={styles.textInfoTitle}>{item.numero}</Text>
+                                                <Text style={styles.textInfo}>{item.idade}</Text>
+                                            </View>
+                                        </View>
+                                    </TouchableOpacity>
+                                )
+                            })}
+                        </View>
+
+                        <TouchableOpacity
+                            style={{
+                                backgroundColor: '#EED3BA',
+                                height: 110,
+                                borderRadius: 20,
+                                alignItems: 'center',
+                                margin: '2%',
+                                justifyContent: 'center',
+                                shadowColor: '#5C5C5C',
+                                textAlign: 'center',
+                                shadowOffset: {
+                                    width: 0,
+                                    height: 4
+                                },
+                                shadowRadius: 5,
+                                shadowOpacity: 1.0,
+                                elevation: 3
+                            }}
+                            onPress={() => {
+                                Alert.alert(
+                                    'Sobre o 7° pico:',
+                                    'Pico de crescimento que pode ser associado ao desenvolvimento da mobilidade, incluindo o início do engatinhar ou andar, além de afetar o sono e o apetite do bebê.',
+                                    [
+                                        { text: 'Ok' },
+                                    ],
+                                    {
+                                        cancelable: false,
+
+                                    }
+                                )
+                            }}>
+                            <View>
+
                                 <Image source={require('./assets/cresc.png')}
                                     style={{
                                         width: 50, height: 50
                                     }} />
                                 <View>
-                                    <Text style={styles.textInfoTitle}>{item.numero}</Text>
-                                    <Text style={styles.textInfo}>{item.idade}</Text>
+                                    <Text style={styles.textInfoTitle}>7° Pico</Text>
+                                    <Text style={styles.textInfo}>9 meses</Text>
                                 </View>
                             </View>
-                            </TouchableOpacity>
-                            )
-                        })}
+                        </TouchableOpacity>
+
                     </View>
-
-                    <TouchableOpacity
-                     style={{
-                        backgroundColor: '#E4F2EF',
-                        height: 110,
-                        borderRadius: 20,
-                        alignItems: 'center',
-                        margin: '2%',
-                        justifyContent: 'center'
-                    }}
-                    onPress={() => {
-                                    Alert.alert(
-                                        'Sobre o 9° pico:',
-                                        'Pico de crescimento que pode ser associado ao desenvolvimento da mobilidade, incluindo o início do engatinhar ou andar, além de afetar o sono e o apetite do bebê.',
-                                        [
-                                            { text: 'Ok', onPress: () => console.log('Botão 1 pressionado') },
-                                          ],
-                                          {
-                                            cancelable: false,
-                                            containerStyle: {
-                                                borderRadius: 10,
-                                                backgroundColor: "#fff",
-                                                borderWidth: 1,
-                                                borderColor: "#ccc",
-                                                shadowColor: "#000",
-                                                shadowOffset: {
-                                                    width: 0,
-                                                    height: 2,
-                                                },
-                                                shadowOpacity: 0.25,
-                                                shadowRadius: 3.84,
-                                                elevation: 5,
-                                            },
-                                            
-                                          }
-                                    )
-                                }}> 
-                    <View>
-                        
-                        <Image source={require('./assets/cresc.png')}
-                            style={{
-                                width: 50, height: 50
-                            }} />
-                        <View>
-                            <Text style={styles.textInfoTitle}>7° Pico</Text>
-                            <Text style={styles.textInfo}>9 meses</Text>
-                        </View>
-                    </View>
-                    </TouchableOpacity>
-
-                </View>
-            </ScrollView>
+                </ScrollView>
 
 
-        </View >
+            </View >
         </ImageBackground>
     );
 }
@@ -172,7 +169,7 @@ const styles = StyleSheet.create(
             resizeMode: 'cover',
             width: '100%',
             height: '100%',
-          },
+        },
 
         container: {
             width: '100%', height: '100%'
@@ -219,12 +216,23 @@ const styles = StyleSheet.create(
 
         card: {
             width: '46%',
-            backgroundColor: '#E4F2EF',
+            backgroundColor: '#EED3BA',
             height: 110,
             borderRadius: 20,
             alignItems: 'center',
             margin: '2%',
             justifyContent: 'center',
+            justifyContent: 'center',
+            shadowColor: '#5C5C5C',
+            textAlign: 'center',
+            shadowOffset: {
+                width: 0,
+                height: 4
+            },
+            width: '45%',
+            shadowRadius: 5,
+            shadowOpacity: 1.0,
+            elevation: 3
         }
     }
 )
