@@ -67,12 +67,12 @@ export default function Janelas() {
         return (
             <ScrollView>
                 <View>
-                    <View style={styles.flexRow}>
+                    {/* <View style={styles.flexRow}>
                         <Text style={styles.textTitleInfo}>
                             Janela:
                         </Text>
                         <Text style={styles.textInfo2}> {items[activeTab].janela_sono}</Text>
-                    </View>
+                    </View> */}
 
                     <View style={styles.flexRow}>
 
@@ -192,10 +192,10 @@ const styles = StyleSheet.create({
         margin: 10,
         alignItems: 'center'
     },
-    activeTab: {
-        borderColor: '#CF8B3B',
-        borderBottomWidth: 2
-    },
+    // activeTab: {
+    //     borderColor: '#CF8B3B',
+    //     borderBottomWidth: 2
+    // },
     tabText: {
         fontSize: 20,
         color: "#C6B198",

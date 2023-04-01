@@ -5,12 +5,12 @@ import { ImageBackground } from 'react-native';
 import bgImage from './assets/back.jpg';
 
 import Reflexos from '../reflexos';
-import Saltos from '../saltos';
 import Calendario from '../calendarioVacinal';
 import Janelas from '../janelasDoSono';
 import PicoCrescimento from '../picosCrescimento';
 import Desenvolvimento from '../desenvolvimento';
 import Competencias from '../competencias';
+import Marcos from '../marcos';
 
 
 
@@ -94,7 +94,7 @@ export default function Menu() {
 
                     <TouchableOpacity
                         onPress={() => {
-                            navigation.navigate(Competencias)
+                            navigation.navigate(Marcos)
                         }}
                         style={styles.option}>
                         <Text style={styles.textOptions}>

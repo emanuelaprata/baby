@@ -8,9 +8,9 @@ import { Entypo } from '@expo/vector-icons';
 import { ImageBackground } from 'react-native';
 import bgImage from './assets/back.png';
 
-import infos from './assets/desenvolvimento.json'
+import infos from './assets/marcos.json'
 
-export default function Desenvolvimento() {
+export default function Marcos() {
 
     const navigation = useNavigation();
 
@@ -48,7 +48,7 @@ export default function Desenvolvimento() {
                                 activeTab === i ? styles.activeTabText : null,
                             ]}
                         >
-                            {item.name}
+                            {item.idade}
                         </Text>
                     </View>
                 </TouchableHighlight>
@@ -59,44 +59,20 @@ export default function Desenvolvimento() {
     const renderContent = () => {
         return (
             <ScrollView
-            style={{width: '100%'}}>
-
-                    <Image source={{ uri: items[activeTab].frames}}
-                        style={{
-                            width: '100%', height: 150, marginTop: 10
-                        }} /> 
-
-                <View style={{ width: '100%', height: 50, borderRadius: 10, backgroundColor: '#EED3BA', justifyContent: 'center', alignItems: 'center', marginTop: 20 }}>
-                    <View style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-                        <Text>Altura:</Text>
-                        <Text> {items[activeTab].height}</Text>
-                    </View>
-                    <View style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-                        <Text>Peso:</Text>
-                        <Text> {items[activeTab].weight}</Text>
-                    </View>
-                </View>
-
-                <Text
-                    style={{
-                        margin: 20, textAlign: 'auto', fontSize: 17
-                    }}
-                >{items[activeTab].description}</Text>
-                <View style={styles.flexRow}>
-                    <Image source={require('./assets/brinc.png')}
-                        style={styles.icon2} />
-                    <View style= {{width: '70%'}}>
-                        <Text>Sugestões de brincadeiras:</Text>
-                        <Text>{items[activeTab].joke}</Text>
-                    </View>
-                </View>
-
-                <View style={styles.flexRow}>
-                        <Image source={require('./assets/favo.png')}
-                            style={styles.icon2} />
-                        <View style= {{width: '70%'}}>
-                            <Text>Marcos no desenvolvimento:</Text>
-                            <Text>infos</Text>
+           >
+                
+                <View style={{ alignItems: 'center'}}>
+                <Image source={require('./assets/favo.png')}
+                            style={styles.icon} />
+                        <View>
+                           
+                            {items[activeTab].marcos.map((marco, i) => {
+                                return (
+                                    <Text style={{textAlign: 'left', margin: 5, fontSize: 15, marginTop: 10}}>
+                                        {i+1 + '. ' + marco}
+                                    </Text>
+                                )
+                            })}
                         </View>
                     </View>
             </ScrollView>
@@ -117,7 +93,7 @@ export default function Desenvolvimento() {
                     onPress={goBack}>
                     <Entypo name="chevron-thin-left" size={15} />
                 </TouchableOpacity>
-                <Text style={styles.textTitle}>Desenvolvimento</Text>
+                <Text style={styles.textTitle}>Marcos no Desenvolvimento</Text>
             </View>
 
 
@@ -128,9 +104,13 @@ export default function Desenvolvimento() {
                     {renderTabs()}
                 </ScrollView> 
 
-                    <ScrollView>
+                    <View>
+                    <Text style={{ fontSize: 15, textAlign: 'center', marginTop: 17, marginBottom: 15, marginHorizontal: 5 }}>São habilidades ou comportamentos que a maioria das crianças adquire em uma determinada faixa etária.</Text>
+
+                    </View>
+                    <View style={{marginTop: 30}}>
                 {renderContent()}
-                </ScrollView>
+                </View>
 
         </View>
         </ImageBackground>
@@ -157,11 +137,7 @@ const styles = StyleSheet.create({
     },
 
     icon: {
-        width: 300, height: 155
-    },
-
-    icon2: {
-        width: 100, height: 100
+        width: 150, height: 150, marginBottom: 20
     }
     ,
     container2: {
@@ -174,9 +150,6 @@ const styles = StyleSheet.create({
     tab: {
         margin: 10,
         alignItems: 'center'
-    },
-    activeTab: {
-       
     },
     tabText: {
         fontSize: 20,

@@ -1,0 +1,122 @@
+[
+    {
+        "idade": "1 mês",
+        "marcos": [
+            "Consegue segurar a cabeça erguida",
+            "Reage a sons fortes",
+            "Faz movimentos reflexos com as mãos e pés",
+            "Fixa o olhar em objetos a uma curta distância",
+            "Sorri em resposta a estímulos"
+        ]
+    },
+    {
+        "idade": "2 meses",
+        "marcos": [
+            "Começa a sustentar o próprio peso com as pernas",
+            "Começa a balbuciar e emitir sons diferentes",
+            "Reconhece a mãe e o pai",
+            "Segue objetos com o olhar",
+            "Sorri socialmente"
+        ]
+    },
+    {
+        "idade": "3 meses",
+        "marcos": [
+            "Consegue rolar do abdômen para as costas",
+            "Tenta pegar objetos com as mãos",
+            "Repete sílabas",
+            "Pode chorar quando os pais saem do campo de visão",
+            "Demonstra preferência por pessoas conhecidas"
+        ]
+    },
+    {
+        "idade": "4 meses",
+        "marcos": [
+            "Consegue levantar a cabeça e o peito ao ficar de bruços",
+            "Começa a sentar sem apoio",
+            "Faz barulhos mais complexos, como 'ah-goo'",
+            "Fica mais calmo quando é consolado pelos pais",
+            "Explora objetos com a boca"
+        ]
+    },
+    {
+        "idade": "5 meses",
+        "marcos": [
+            "Consegue sentar sem apoio",
+            "Tenta engatinhar",
+            "Responde ao próprio nome",
+            "Sabe a diferença entre rostos familiares e desconhecidos",
+            "Reage aos sons do ambiente"
+        ]
+    },
+    {
+        "idade": "6 meses",
+        "marcos": [
+            "Consegue engatinhar",
+            "Começa a ficar em pé com apoio",
+            "Faz gestos para chamar atenção",
+            "Imita sons e gestos",
+            "Desenvolve ansiedade de separação"
+        ]
+    },
+    {
+        "idade": "7 meses",
+        "marcos": [
+            "Começa a ficar em pé sem apoio",
+            "Pode dar os primeiros passos com ajuda",
+            "Diz algumas palavras simples, como 'mama' e 'papa'",
+            "Brinca de jogar objetos e pegá-los de volta",
+            "Demonstra sentimentos de alegria, tristeza e raiva"
+        ]
+    },
+    {
+        "idade": "8 meses",
+        "marcos": [
+            "Pode andar segurando em móveis",
+            "Faz sons variados, como 'tchau' e 'au-au'",
+            "Pode imitar palavras e gestos simples",
+            "Começa a entender 'não'",
+            "Demonstra curiosidade em explorar o ambiente"
+        ]
+    },
+    {
+        "idade": "9 meses",
+        "marcos": [
+            "Pode andar sozinho",
+            "Começa a usar objetos corretamente, como uma colher",
+            "Faz gestos para indicar o que quer",
+            "Demonstra empatia com outras crianças",
+            "Pode ter medo de estranhos"
+        ]
+    },
+    {
+        "idade": "10 meses",
+        "marcos": [
+            "Pode subir escadas",
+            "Usa gestos simples para se comunicar",
+            "Entende instruções simples",
+            "Explora objetos com mais habilidade",
+            "Demonstra preferências por determinados brinquedos"
+        ]
+    },
+    {
+        "idade": "11 meses",
+        "marcos": [
+            "Começa a falar palavras simples além de 'mama' e 'papa'",
+            "Pode indicar partes do corpo quando perguntado",
+            "Demonstra interesse em livros e histórias",
+            "Brinca de imitar atividades cotidianas",
+            "Pode ficar frustrado com facilidade"
+        ]
+    },
+    {
+        "idade": "12 meses",
+        "marcos": [
+            "Pode andar para trás e para os lados",
+            "Pode andar sem ajuda",
+            "Entende frases simples, como 'venha aqui'",
+            "Usa palavras para expressar necessidades e desejos",
+            "Brinca de esconder e procurar objetos"
+        ]
+    }
+]
