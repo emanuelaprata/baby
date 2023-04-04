@@ -1,20 +1,14 @@
 import React from 'react';
-import { Alert } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from 'react-native';
+import { Alert, ImageBackground, Text, View, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
-import { List } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native'
-import { ImageBackground } from 'react-native';
 import bgImage from './assets/back.png';
-
+import styles from './styles'
 import infos from './assets/picos.json'
 
 
 export default function PicoCrescimento() {
-
-
-
     const navigation = useNavigation();
 
     function goBack() {
@@ -25,7 +19,7 @@ export default function PicoCrescimento() {
 
     const handlePress = () => setExpanded(!expanded);
 
-    const [picos, setPicos] = React.useState(
+    const picos = (
 
         infos
 
@@ -50,32 +44,7 @@ export default function PicoCrescimento() {
 
                 <ScrollView style={{ width: '100%' }}>
                     <View style={styles.containerInfos}>
-                        {/* <Image source={require('./assets/picos.png')}
-                        style={{
-                            width: 300, height: 170
-                        }} /> */}
-                        {/* <List.Section >
-                        <List.Accordion
-                            title="O que é?"
-                            style={styles.itemAcordion}
-                            onPress={handlePress}>
-                            <Text style={styles.textInfo}>Diz respeito ao crescimento físico. O crescimento não é constante, ele ocorre de forma mais intensa em alguns períodos específicos que chamamos de picos.</Text>
-                        </List.Accordion>
-                    </List.Section> */}
-
-                        <Text style={{ fontSize: 15, textAlign: 'center', marginTop: 30, marginBottom: 15 }}>O crescimento físico não é constante, ele ocorre de forma mais intensa em alguns períodos específicos que chamamos de picos. Podemos identificar com o aumento das mamadas que também podem influenciar no sono do bebê.</Text>
-
-
-                        {/* <List.Section
-                        style={{ marginBottom: 30 }}>
-                        <List.Accordion
-                            title="Como identificar"
-                            style={styles.itemAcordion}
-                            onPress={handlePress}>
-                            <Text style={styles.textInfo}>Com o aumento das mamadas que também podem influenciar no sono do bebê.</Text>
-                        </List.Accordion>
-                    </List.Section> */}
-
+                                        <Text style={{ fontSize: 15, textAlign: 'center', marginTop: 30, marginBottom: 15 }}>O crescimento físico não é constante, ele ocorre de forma mais intensa em alguns períodos específicos que chamamos de picos. Podemos identificar com o aumento das mamadas que também podem influenciar no sono do bebê.</Text>
 
                         <View style={styles.flexRow}>
 
@@ -162,77 +131,3 @@ export default function PicoCrescimento() {
     );
 }
 
-const styles = StyleSheet.create(
-    {
-        background: {
-            flex: 1,
-            resizeMode: 'cover',
-            width: '100%',
-            height: '100%',
-        },
-
-        container: {
-            width: '100%', height: '100%'
-        },
-
-        textTitle: {
-            fontSize: 20, marginStart: 15
-        },
-
-        flexRow: {
-            display: 'flex',
-            flexDirection: 'row',
-            flexWrap: 'wrap',
-            alignItems: 'center'
-        },
-
-        textHeader: { fontSize: 30, color: 'black', marginTop: 90, textAlign: 'center', flexGrow: 1, fontWeight: '600' },
-
-        containerInfos: {
-            width: '100%',
-            paddingHorizontal: 30
-        },
-
-        itemAcordion: {
-            backgroundColor: '#DDAE76',
-            height: 50,
-
-        },
-
-        textInfoTitle: {
-            fontSize: 15,
-            color: '#573205',
-            width: '100%',
-            fontWeight: 'bold',
-            marginTop: 5
-        },
-
-        textInfo: {
-            fontSize: 15,
-            color: '#573205',
-            width: '100%',
-            textAlign: 'center'
-        },
-
-        card: {
-            width: '46%',
-            backgroundColor: '#EED3BA',
-            height: 110,
-            borderRadius: 20,
-            alignItems: 'center',
-            margin: '2%',
-            justifyContent: 'center',
-            justifyContent: 'center',
-            shadowColor: '#5C5C5C',
-            textAlign: 'center',
-            shadowOffset: {
-                width: 0,
-                height: 4
-            },
-            width: '45%',
-            shadowRadius: 5,
-            shadowOpacity: 1.0,
-            elevation: 3
-        }
-    }
-)

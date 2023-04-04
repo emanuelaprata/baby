@@ -1,12 +1,10 @@
-import React from 'react';
-import { Text, View, Image, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import { ImageBackground, Text, View, Image, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import { List } from 'react-native-paper';
 import { StatusBar } from 'expo-status-bar';
-import { useState } from 'react';
 import { useNavigation } from '@react-navigation/native'
 import styles from './assets/styles'
-import { ImageBackground } from 'react-native';
 import bgImage from './assets/back.png';
 import reflexos from './assets/reflexos.json'
 
@@ -22,21 +20,18 @@ export default function Reflexos() {
 
   const handlePress = () => setExpanded(!expanded);
 
-  const [items, setItems] = useState(
+  const items = (
     reflexos
   )
 
   return (
-    <ImageBackground source={bgImage} style={{ flex: 1,
-      resizeMode: 'cover',
-      width: '100%',
-      height: '100%'}}>
     <View style={styles.container}>
+       <ImageBackground source={bgImage} style={styles.background}>
 
       <StatusBar style="auto" />
-      <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 30 }}>
+      <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 30, marginBottom: 10 }}>
         <TouchableOpacity
-          style={{ marginLeft: 10 }}
+          style={{ marginLeft: 10}}
           onPress={goBack}>
           <Entypo name="chevron-thin-left" size={15} />
         </TouchableOpacity>
@@ -45,11 +40,11 @@ export default function Reflexos() {
       </View>
 
       <ScrollView
-        style={{ backgroundColor: '#EBEAEA', width: '100%' }}
+        style={{width: '100%' }}
       >
         
-        <View style={{ width: '100%', backgroundColor: '#EBEAEA', paddingTop: 20, borderRadius: 20 }} >
-          <Text style={{ fontSize: 16, textAlign: 'center', margin: 10, color: '#573205' }}>Os reflexos primitivos são respostas automáticas e estereotipadas a um determinado estímulo externo.</Text>
+        <View style={{ width: '100%', paddingTop: 20, borderRadius: 20 }} >
+          <Text style={{ fontSize: 16, textAlign: 'center' }}>Os reflexos primitivos são respostas automáticas e estereotipadas a um determinado estímulo externo.</Text>
         </View>
 
 
@@ -89,9 +84,9 @@ export default function Reflexos() {
         </View>
 
       </ScrollView>
+      </ImageBackground>
 
     </View >
-    </ImageBackground>
   );
 }
 

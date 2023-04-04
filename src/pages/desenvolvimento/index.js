@@ -2,12 +2,11 @@ import React from 'react';
 import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { useNavigation } from '@react-navigation/native'
-import { StyleSheet, Text, View, Image, TouchableOpacity, TouchableHighlight, ScrollView } from 'react-native';
+import { Text, View, Image, TouchableOpacity, TouchableHighlight, ScrollView } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
-
 import { ImageBackground } from 'react-native';
 import bgImage from './assets/back.png';
-
+import styles from './styles'
 import infos from './assets/desenvolvimento.json'
 
 export default function Desenvolvimento() {
@@ -18,7 +17,7 @@ export default function Desenvolvimento() {
         navigation.goBack()
     }
 
-    const [items, setItems] = React.useState(
+    const items = (
         infos
     )
 
@@ -58,48 +57,35 @@ export default function Desenvolvimento() {
 
     const renderContent = () => {
         return (
-            <ScrollView
-            style={{width: '100%'}}>
+                <View>
+                    <Image source={{ uri: items[activeTab].frames }}
+                        style={styles.banner} />
 
-                    <Image source={{ uri: items[activeTab].frames}}
-                        style={{
-                            width: '100%', height: 150, marginTop: 10
-                        }} /> 
-
-                <View style={{ width: '100%', height: 50, borderRadius: 10, backgroundColor: '#EED3BA', justifyContent: 'center', alignItems: 'center', marginTop: 20 }}>
-                    <View style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-                        <Text>Altura:</Text>
-                        <Text> {items[activeTab].height}</Text>
-                    </View>
-                    <View style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-                        <Text>Peso:</Text>
-                        <Text> {items[activeTab].weight}</Text>
-                    </View>
-                </View>
-
-                <Text
-                    style={{
-                        margin: 20, textAlign: 'auto', fontSize: 17
-                    }}
-                >{items[activeTab].description}</Text>
-                <View style={styles.flexRow}>
-                    <Image source={require('./assets/brinc.png')}
-                        style={styles.icon2} />
-                    <View style= {{width: '70%'}}>
-                        <Text>Sugestões de brincadeiras:</Text>
-                        <Text>{items[activeTab].joke}</Text>
-                    </View>
-                </View>
-
-                <View style={styles.flexRow}>
-                        <Image source={require('./assets/favo.png')}
-                            style={styles.icon2} />
-                        <View style= {{width: '70%'}}>
-                            <Text>Marcos no desenvolvimento:</Text>
-                            <Text>infos</Text>
+                    <View style={styles.containerInfo}>
+                        <View style={styles.flexRow}>
+                            <Text>Altura:</Text>
+                            <Text> {items[activeTab].height}</Text>
+                        </View>
+                        <View style={styles.flexRow}>
+                            <Text>Peso:</Text>
+                            <Text> {items[activeTab].weight}</Text>
                         </View>
                     </View>
-            </ScrollView>
+
+                    <Text
+                        style={{
+                            margin: 20, textAlign: 'auto', fontSize: 17
+                        }}
+                    >{items[activeTab].description}</Text>
+                    <View style={styles.flexRow}>
+                        <Image source={require('./assets/brinc.png')}
+                            style={styles.icon} />
+                        <View style={{ width: '60%' }}>
+                            <Text style={{ fontWeight: 'bold' }}>Sugestões de brincadeiras:</Text>
+                            <Text>{items[activeTab].joke}</Text>
+                        </View>
+                    </View>
+                </View>
         );
     };
 
@@ -108,87 +94,36 @@ export default function Desenvolvimento() {
 
     return (
         <ImageBackground source={bgImage} style={styles.background}>
-        <View styles={styles.container}>
-            <StatusBar style="auto" />
+                <StatusBar style="auto" />
 
-            <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 30 }}>
-                <TouchableOpacity
-                    style={{ marginLeft: 10 }}
-                    onPress={goBack}>
-                    <Entypo name="chevron-thin-left" size={15} />
-                </TouchableOpacity>
-                <Text style={styles.textTitle}>Desenvolvimento</Text>
-            </View>
-
+                <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 30, marginBottom: 10 }}>
+                    <TouchableOpacity
+                        style={{ marginLeft: 10 }}
+                        onPress={goBack}>
+                        <Entypo name="chevron-thin-left" size={15} />
+                    </TouchableOpacity>
+                    <Text style={styles.textTitle}>Desenvolvimento</Text>
+                </View>
 
                 <ScrollView
                     horizontal={true}
                     horizontal showsHorizontalScrollIndicator={false}
-                    style={{ paddingHorizontal: 10}}>
+                    style={{marginBottom:10}}
+                    >
                     {renderTabs()}
-                </ScrollView> 
-
-                    <ScrollView>
-                {renderContent()}
                 </ScrollView>
 
-        </View>
+                <ScrollView>
+                    <View style={{ width: '100%' }}>
+                         {renderContent()}
+                    <Text style={styles.textAlert}>
+                        Cada bebê se desenvolve em seu próprio ritmo, essas são apenas diretrizes gerais. Se você tiver preocupações sobre o desenvolvimento do seu bebê, fale com o pediatra responsável.
+                    </Text>
+                    </View>
+                   
+                </ScrollView>
+
         </ImageBackground>
     )
 }
-
-const styles = StyleSheet.create({
-    background: {
-        flex: 1,
-        resizeMode: 'cover',
-        width: '100%',
-        height: '100%',
-    },
-    container: {
-        width: '100%', height: '100%'
-    },
-
-    flexRow: {
-        display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', padding: 15
-    },
-
-    textTitle: {
-        fontSize: 20, marginStart: 15
-    },
-
-    icon: {
-        width: 300, height: 155
-    },
-
-    icon2: {
-        width: 100, height: 100
-    }
-    ,
-    container2: {
-        flex: 1,
-    },
-    tabContainer: {
-        flexDirection: "row",
-        paddingHorizontal: 10,
-    },
-    tab: {
-        margin: 10,
-        alignItems: 'center'
-    },
-    activeTab: {
-       
-    },
-    tabText: {
-        fontSize: 20,
-        color: "#C6B198",
-    },
-    activeTabText: {
-        color: "#573205",
-    },
-    content: {
-        flex: 1,
-        alignItems: "center",
-        justifyContent: "center",
-    },
-});
 

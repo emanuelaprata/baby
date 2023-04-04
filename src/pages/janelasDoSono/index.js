@@ -1,39 +1,27 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { useNavigation } from '@react-navigation/native'
-import { StyleSheet, Text, View, Image, TouchableOpacity, TouchableHighlight, ScrollView } from 'react-native';
+import { ImageBackground, Text, View, Image, TouchableOpacity, TouchableHighlight, ScrollView } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
-import infos from './assets/janelasDoSono.json'
-import { ImageBackground } from 'react-native';
 import bgImage from './assets/back.png';
+import styles from './assets/styles'
+import infos from './assets/janelasDoSono.json'
+
 
 export default function Janelas() {
 
+    const items = ( infos )
     const navigation = useNavigation();
-
-
-
     function goBack() {
         navigation.goBack()
     }
 
-    // Acordeon #######
-    const [expandedList, setExpandedList] = React.useState(true);
-
-    const handlePressList = () => setExpandedList(!expandedList);
-
     // TabView ########
 
     const [activeTab, setActiveTab] = useState(0);
-
     const handlePress = (tabIndex) => {
         setActiveTab(tabIndex);
     }
-
-    const [items, setItems] = React.useState(
-        infos
-    )
 
     const renderTabs = () => {
         return items.map((item, i) => {
@@ -67,13 +55,7 @@ export default function Janelas() {
         return (
             <ScrollView>
                 <View>
-                    {/* <View style={styles.flexRow}>
-                        <Text style={styles.textTitleInfo}>
-                            Janela:
-                        </Text>
-                        <Text style={styles.textInfo2}> {items[activeTab].janela_sono}</Text>
-                    </View> */}
-
+                   
                     <View style={styles.flexRow}>
 
                         <Text style={styles.textTitleInfo}>
@@ -156,77 +138,3 @@ export default function Janelas() {
         </ImageBackground>
     )
 }
-
-const styles = StyleSheet.create({
-    background: {
-        flex: 1,
-        resizeMode: 'cover',
-        width: '100%',
-        height: '100%',
-      },
-    container: {
-        width: '100%', height: '100%'
-    },
-
-    flexRow: {
-        display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'flex-start', marginHorizontal: 20
-    },
-
-    textTitle: {
-        fontSize: 20, marginStart: 15
-    },
-
-    icon: {
-        width: 300, height: 290, marginTop: 0
-    }
-    ,
-    container2: {
-        flex: 1,
-    },
-    tabContainer: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-        paddingHorizontal: 10,
-    },
-    tab: {
-        margin: 10,
-        alignItems: 'center'
-    },
-    // activeTab: {
-    //     borderColor: '#CF8B3B',
-    //     borderBottomWidth: 2
-    // },
-    tabText: {
-        fontSize: 20,
-        color: "#C6B198",
-    },
-    activeTabText: {
-        color: "#573205",
-    },
-    content: {
-        flex: 1,
-        justifyContent: "center",
-    },
-
-    textInfo: {
-        fontSize: 15,
-        marginTop: 10,
-        width: '100%',
-        textAlign: 'center'
-    },
-
-    textTitleInfo: {
-        marginTop: 5,
-        fontSize: 17,
-        fontWeight: 'bold'
-    },
-
-    textInfo2: {
-        fontSize: 16,
-        marginTop: 5,
-    
-    },
-
-
-});
-

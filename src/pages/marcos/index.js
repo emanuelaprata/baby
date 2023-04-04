@@ -1,29 +1,18 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { useNavigation } from '@react-navigation/native'
-import { StyleSheet, Text, View, Image, TouchableOpacity, TouchableHighlight, ScrollView } from 'react-native';
+import { ImageBackground, Text, View, Image, TouchableOpacity, TouchableHighlight, ScrollView } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
-
-import { ImageBackground } from 'react-native';
 import bgImage from './assets/back.png';
-
+import styles from './assets/styles'
 import infos from './assets/marcos.json'
 
 export default function Marcos() {
 
     const navigation = useNavigation();
-
-    function goBack() {
-        navigation.goBack()
-    }
-
-    const [items, setItems] = React.useState(
-        infos
-    )
-
+    function goBack() {navigation.goBack()}
+    const items =(infos)
     const [activeTab, setActiveTab] = useState(0);
-
     const handlePress = (tabIndex) => {
         setActiveTab(tabIndex);
     }
@@ -75,6 +64,10 @@ export default function Marcos() {
                             })}
                         </View>
                     </View>
+
+                    <Text style={{ textAlign: 'center', color: '#A4A2A2', margin: 10 }}>
+                    É importante lembrar que os marcos de desenvolvimento são apenas orientações gerais e que cada criança se desenvolve em seu próprio ritmo. Se você tiver dúvidas ou preocupações sobre o desenvolvimento de uma criança, é sempre melhor consultar um profissional de saúde ou educação.
+                    </Text>
             </ScrollView>
         );
     };
@@ -105,7 +98,7 @@ export default function Marcos() {
                 </ScrollView> 
 
                     <View>
-                    <Text style={{ fontSize: 15, textAlign: 'center', marginTop: 17, marginBottom: 15, marginHorizontal: 5 }}>São habilidades ou comportamentos que a maioria das crianças adquire em uma determinada faixa etária.</Text>
+                    <Text style={styles.font}>São habilidades ou comportamentos que a maioria das crianças adquire em uma determinada faixa etária.</Text>
 
                     </View>
                     <View style={{marginTop: 30}}>
@@ -116,52 +109,4 @@ export default function Marcos() {
         </ImageBackground>
     )
 }
-
-const styles = StyleSheet.create({
-    background: {
-        flex: 1,
-        resizeMode: 'cover',
-        width: '100%',
-        height: '100%',
-    },
-    container: {
-        width: '100%', height: '100%'
-    },
-
-    flexRow: {
-        display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', padding: 15
-    },
-
-    textTitle: {
-        fontSize: 20, marginStart: 15
-    },
-
-    icon: {
-        width: 150, height: 150, marginBottom: 20
-    }
-    ,
-    container2: {
-        flex: 1,
-    },
-    tabContainer: {
-        flexDirection: "row",
-        paddingHorizontal: 10,
-    },
-    tab: {
-        margin: 10,
-        alignItems: 'center'
-    },
-    tabText: {
-        fontSize: 20,
-        color: "#C6B198",
-    },
-    activeTabText: {
-        color: "#573205",
-    },
-    content: {
-        flex: 1,
-        alignItems: "center",
-        justifyContent: "center",
-    },
-});
 

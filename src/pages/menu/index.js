@@ -126,7 +126,7 @@ export default function Menu() {
 
                 <View
                 >
-                    <Text style={{ textAlign: 'center', color: '#A4A2A2' }}>Esse aplicativo possui informações generalizadas e não substitui o acompanhamento pediatrico.</Text>
+                    <Text style={{ textAlign: 'center', color: '#A4A2A2', marginBottom: 10 }}>Esse aplicativo possui informações generalizadas e não substitui o acompanhamento pediatrico.</Text>
                 </View>
 
             </ScrollView>
