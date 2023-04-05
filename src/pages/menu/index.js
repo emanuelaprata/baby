@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native'
-import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from 'react-native';
-import { ImageBackground } from 'react-native';
+import { Text, View, Image, TouchableOpacity, ScrollView, ImageBackground} from 'react-native';
 import bgImage from './assets/back.jpg';
+import styles from './styles'
 
 import Reflexos from '../reflexos';
 import Calendario from '../calendarioVacinal';
@@ -24,7 +24,7 @@ export default function Menu() {
         <View style={styles.container}>
             
 
-            <Image source={require('./assets/icon.png')}
+            <Image source={require('./assets/icon2.png')}
                 style={{
                     width: 300, height: 230, marginTop: 40
                 }} />
@@ -135,58 +135,3 @@ export default function Menu() {
         </ImageBackground>
     );
 }
-
-const styles = StyleSheet.create({
-    background: {
-        flex: 1,
-        resizeMode: 'cover',
-        width: '100%',
-        height: '100%',
-      },
-
-    flexRow: {
-        display: 'flex',
-        flexDirection: 'row',
-        flexWrap: 'wrap'
-    },
-
-    container: {
-        display: 'flex',
-        width: '100%',
-        height: '100%',
-        alignItems: 'center',
-    },
-
-    containerOptions: {
-        marginTop: -20,
-        height: '100%',
-        width: '100%',
-    },
-
-    option: {
-        backgroundColor: 'white',
-        width: 347,
-        height: 92,
-        borderRadius: 10,
-        marginTop: 30,
-        marginHorizontal: '2%',
-        justifyContent: 'center',
-        shadowColor: '#5C5C5C',
-        textAlign: 'center',
-        shadowOffset: {
-            width: 0,
-            height: 4
-        },
-        width: '45%',
-        shadowRadius: 5,
-        shadowOpacity: 1.0,
-        elevation: 3
-    },
-
-
-    textOptions: {
-        fontSize: 15,
-        color: '#573205',
-        marginStart: 10
-    }
-})

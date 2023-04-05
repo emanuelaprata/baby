@@ -6,7 +6,7 @@ import { Entypo } from '@expo/vector-icons';
 import { List } from 'react-native-paper';
 
 import bgImage from './assets/back.png';
-import styles from './assets/style'
+import styles from './style'
 import calendario from './assets/calendario.json'
 
 

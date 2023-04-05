@@ -4,7 +4,7 @@ import { Entypo } from '@expo/vector-icons';
 import { List } from 'react-native-paper';
 import { StatusBar } from 'expo-status-bar';
 import { useNavigation } from '@react-navigation/native'
-import styles from './assets/styles'
+import styles from './styles'
 import bgImage from './assets/back.png';
 import reflexos from './assets/reflexos.json'
 

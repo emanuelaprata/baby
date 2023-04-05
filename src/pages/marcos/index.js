@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native'
 import { ImageBackground, Text, View, Image, TouchableOpacity, TouchableHighlight, ScrollView } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import bgImage from './assets/back.png';
-import styles from './assets/styles'
+import styles from './styles'
 import infos from './assets/marcos.json'
 
 export default function Marcos() {

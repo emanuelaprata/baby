@@ -67,7 +67,7 @@ export default StyleSheet.create({
     },
 
     acordion: {
-        backgroundColor: '#EDCB9C',
+        backgroundColor: '#DFC4A7',
         height: 50,
         paddingHorizontal: 30,
     },

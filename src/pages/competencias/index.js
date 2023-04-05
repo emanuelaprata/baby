@@ -5,7 +5,7 @@ import { Entypo } from '@expo/vector-icons';
 import competencias from './assets/competencias.json'
 import { useNavigation } from '@react-navigation/native'
 import bgImage from './assets/back.png';
-import styles from './assets/style'
+import styles from './style'
 
 export default function Competencias() {
 

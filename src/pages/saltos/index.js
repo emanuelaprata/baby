@@ -5,7 +5,7 @@ import { Entypo, AntDesign } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native'
 import bgImage from './assets/back.png';
 import infos from './assets/saltos.json'
-import styles from './assets/styles'
+import styles from './styles'
 
 export default function Saltos() {
      const navigation = useNavigation();
